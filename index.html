@@ -1,0 +1,613 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="theme-color" content="#A20161" />
+<meta property="og:title" content="Tania Medellin" />
+<meta property="og:description" content="Business and brand valuation at EY, now building brands across luxury, beauty, consumer and financial services." />
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' fill='%23A20161'/><text x='50%25' y='56%25' text-anchor='middle' dominant-baseline='middle' font-family='Impact,sans-serif' font-size='40' fill='%23F187B7'>T</text></svg>" />
+<title>Tania Medellin</title>
+<meta name="description" content="Tania Medellin: six years of business and brand valuation at EY, now moving into marketing and brand strategy across luxury, beauty, consumer brands and financial services." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+/* Layout: a fashion-editorial collage. Bold condensed headlines overlap striped "fabric" tiles,
+   and sections alternate berry, pink and chalk like spreads in a lookbook. Single, deliberate look. */
+:root {
+  --berry: #A20161;
+  --berry-deep: #74003F;
+  --pink: #F187B7;
+  --blush: #F9CFE1;
+  --chalk: #EEE7EA;
+  --white: #FFFFFF;
+  --ink: #3B0022;
+  --mango: #EE8A4A;
+  --gold: #E9B44C;
+
+  --display: "Anton", "Bebas Neue", Impact, "Arial Narrow Bold", sans-serif;
+  --body: "Montserrat", "Helvetica Neue", Arial, sans-serif;
+
+  --gutter: clamp(16px, 5vw, 80px);
+  --max: 1240px;
+  color-scheme: dark;
+}
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0; background: var(--berry); color: var(--chalk);
+  font-family: var(--body); font-size: 16px; line-height: 1.65; font-weight: 400;
+  -webkit-font-smoothing: antialiased; overflow-x: hidden;
+}
+::selection { background: var(--pink); color: var(--berry-deep); }
+a { color: inherit; }
+h1, h2, h3 { font-family: var(--display); font-weight: 400; margin: 0; line-height: .92; text-transform: uppercase; letter-spacing: .005em; text-wrap: balance; }
+:focus-visible { outline: 3px solid var(--pink); outline-offset: 3px; }
+.wrap { max-width: var(--max); margin: 0 auto; padding-inline: var(--gutter); }
+.label { font-size: 12px; font-weight: 600; letter-spacing: .2em; text-transform: uppercase; }
+
+/* Scroll progress + cursor */
+.progress { position: fixed; top: 0; left: 0; height: 4px; width: 100%; transform-origin: 0 50%; transform: scaleX(0); background: var(--pink); z-index: 50; }
+.cursor { position: fixed; top: 0; left: 0; width: 14px; height: 14px; margin: -7px 0 0 -7px; border-radius: 50%; background: var(--white); border: 1.5px solid var(--berry-deep); box-shadow: 0 2px 8px rgba(59,0,34,.25); pointer-events: none; z-index: 60; transition: width .25s, height .25s, margin .25s, opacity .3s; display: none; opacity: 0; }
+.cursor.is-on { opacity: 1; }
+.cursor.is-big { width: 56px; height: 56px; margin: -28px 0 0 -28px; background: rgba(255,255,255,.35); }
+@media (pointer: fine) { .has-cursor .cursor { display: block; } }
+
+/* Nav */
+.nav { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 40; background: var(--berry); border-bottom: 1px solid rgba(238,231,234,.14); }
+.nav .wrap { display: flex; justify-content: space-between; align-items: center; padding-block: 16px; gap: 16px; }
+.nav__mark { font-family: var(--display); font-size: 24px; text-decoration: none; letter-spacing: .04em; }
+.nav__mark span { color: var(--pink); }
+.nav__links { display: flex; gap: clamp(14px, 2.6vw, 34px); }
+.nav__links a { text-decoration: none; font-size: 12px; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; opacity: .8; transition: opacity .2s, color .2s; }
+.nav__links a:hover { opacity: 1; color: var(--pink); }
+.nav__links .nav__cta { opacity: 1; color: var(--berry-deep); background: var(--pink); padding: 8px 14px; border-radius: 999px; }
+.nav__links .nav__cta:hover { color: var(--berry-deep); background: var(--blush); }
+
+/* Hero */
+.hero { position: relative; padding-block: clamp(36px, 5vw, 64px) clamp(64px, 9vw, 110px); overflow: hidden; }
+.hero .wrap { position: relative; }
+.hero__tag { position: relative; z-index: 2; display: block; color: var(--pink); }
+.hero__name { position: relative; z-index: 2; font-size: clamp(68px, 12.5vw, 180px); line-height: .9; margin-top: clamp(28px, 4vw, 40px); }
+.hero__name .line { display: block; }
+.hero__name .line--pink { color: var(--pink); }
+.hero__name .ch { display: inline-block; transition: transform .35s cubic-bezier(.3,1.6,.5,1), color .25s; }
+.hero__name .ch:hover { transform: translateY(-.08em) rotate(-4deg); color: var(--white); }
+.hero__name .line--pink .ch:hover { color: var(--chalk); }
+.hero__sub { position: relative; z-index: 2; margin: clamp(24px, 3vw, 36px) 0 0; max-width: 44ch; font-size: clamp(16px, 1.6vw, 19px); font-weight: 500; }
+.hero__actions { position: relative; z-index: 2; display: flex; flex-wrap: wrap; gap: 12px; margin-top: 32px; }
+.btn { display: inline-flex; align-items: center; gap: 10px; padding: 14px 24px; border-radius: 999px; font: 600 13px/1 var(--body); letter-spacing: .14em; text-transform: uppercase; text-decoration: none; cursor: pointer; border: 2px solid var(--pink); transition: background .25s, color .25s, transform .25s; }
+.btn:hover { transform: translateY(-2px); }
+.btn--pink { background: var(--pink); color: var(--berry-deep); }
+.btn--pink:hover { background: var(--chalk); border-color: var(--chalk); }
+.btn--line { background: transparent; color: var(--chalk); }
+.btn--line:hover { background: var(--pink); color: var(--berry-deep); }
+
+.tile { position: absolute; z-index: 1; will-change: transform; transition: transform .2s ease-out; box-shadow: 0 30px 60px -30px rgba(40,0,22,.6); }
+.tile--formula { right: var(--gutter); bottom: clamp(-64px, -3.5vw, -24px); width: clamp(220px, 30vw, 400px); max-width: 100%; background: var(--chalk); color: var(--berry-deep); padding: clamp(18px, 2.4vw, 32px); }
+.tile--formula .label { color: var(--berry); }
+.formula { font-family: var(--display); font-size: clamp(20px, 2.1vw, 28px); line-height: 1.05; margin: 12px 0 14px; text-transform: none; }
+.formula sup { font-size: .5em; }
+.spark { display: block; width: 100%; height: auto; }
+.spark path { fill: none; stroke: var(--berry); stroke-width: 3; stroke-linecap: round; stroke-dasharray: 400; stroke-dashoffset: 0; }
+.tile--formula small { display: block; font-size: 12px; margin-top: 8px; color: var(--berry-deep); }
+
+/* Marquee */
+.marquee { background: var(--pink); color: var(--berry-deep); overflow: hidden; border-block: 2px solid var(--berry-deep); }
+.marquee__track { display: flex; width: max-content; animation: slide 32s linear infinite; }
+.marquee:hover .marquee__track { animation-play-state: paused; }
+.marquee__track span { font-family: var(--display); font-size: clamp(26px, 3.6vw, 44px); text-transform: uppercase; padding: 14px 0; white-space: nowrap; }
+.marquee__track span::after { content: "✦"; font-family: var(--body); font-size: .5em; margin: 0 .9em; vertical-align: middle; }
+@keyframes slide { to { transform: translateX(-50%); } }
+
+/* Lens (About) */
+.lens { background: var(--chalk); color: var(--ink); padding-block: clamp(72px, 10vw, 130px); }
+.lens .label { color: var(--berry); }
+.lens__grid { display: grid; grid-template-columns: 1.05fr 1fr; gap: clamp(32px, 6vw, 90px); align-items: start; }
+.lens__grid > * { min-width: 0; }
+.lens h2 { font-size: clamp(52px, 7.6vw, 104px); color: var(--berry); margin-top: 18px; }
+.lens h2 em { font-style: normal; color: var(--pink); -webkit-text-stroke: 0; }
+.lens__intro { margin: 20px 0 0; max-width: 46ch; color: #5A2A43; }
+.switch { display: inline-flex; padding: 5px; background: var(--white); border-radius: 999px; border: 2px solid var(--berry); position: relative; }
+.switch button { position: relative; z-index: 1; border: 0; background: none; cursor: pointer; padding: 12px 22px; font: 600 13px/1 var(--body); letter-spacing: .14em; text-transform: uppercase; color: var(--berry); border-radius: 999px; transition: color .3s; }
+.switch button[aria-pressed="true"] { color: var(--white); }
+.switch__pill { position: absolute; top: 5px; bottom: 5px; left: 5px; width: calc(50% - 5px); background: var(--berry); border-radius: 999px; transition: transform .45s cubic-bezier(.5,1.4,.5,1); }
+.switch[data-lens="marketing"] .switch__pill { transform: translateX(100%); }
+.lens__panel { margin-top: 28px; background: var(--berry); color: var(--chalk); padding: clamp(24px, 3vw, 40px); position: relative; overflow: hidden; transition: background .4s; }
+.lens__panel[data-lens="marketing"] { background: var(--berry-deep); }
+.lens__panel h3 { font-size: clamp(30px, 3.4vw, 44px); color: var(--pink); }
+.lens__panel p { margin: 14px 0 20px; }
+.lens__panel ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
+.lens__panel li { display: flex; gap: 12px; align-items: baseline; }
+.lens__panel li::before { content: ""; flex: none; width: 10px; height: 10px; background: var(--pink); transform: rotate(45deg) translateY(-1px); }
+.lens__panel .swap { animation: swap .5s ease both; }
+@keyframes swap { from { opacity: 0; transform: translateY(14px); } }
+
+/* Figures */
+.figures { background: var(--berry-deep); padding-block: clamp(56px, 8vw, 96px); }
+.figures__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; }
+.fig { padding: 8px clamp(14px, 2vw, 28px); border-left: 2px solid rgba(241,135,183,.35); }
+.fig:first-child { border-left: 0; padding-left: 0; }
+.fig__num { font-family: var(--display); font-size: clamp(64px, 8vw, 118px); line-height: 1; color: var(--pink); font-variant-numeric: tabular-nums; display: block; }
+.fig__label { display: block; margin-top: 12px; font-size: 15px; font-weight: 500; max-width: 32ch; }
+
+/* Section heads */
+.head { display: flex; justify-content: space-between; align-items: flex-end; gap: 20px; flex-wrap: wrap; margin-bottom: clamp(36px, 5vw, 60px); }
+.head h2 { font-size: clamp(56px, 9vw, 128px); }
+.head p { margin: 0; max-width: 38ch; font-weight: 500; }
+
+/* Journey timeline */
+.journey { padding-block: clamp(72px, 10vw, 130px); }
+.journey .head { display: block; }
+.journey .head h2 { font-size: clamp(40px, 5.4vw, 80px); line-height: 1.12; max-width: 21ch; }
+.journey .head h2 span { color: var(--pink); }
+.journey .head p { margin-top: 20px; }
+.track { display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; position: relative; }
+.track::before { content: ""; position: absolute; left: 0; right: 0; top: 23px; height: 2px; background: rgba(238,231,234,.25); }
+.track__fill { position: absolute; left: 0; top: 23px; height: 2px; background: var(--pink); transition: width .6s cubic-bezier(.5,0,.2,1); }
+.stop { position: relative; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start; align-self: start; text-align: left; background: none; border: 0; color: var(--chalk); cursor: pointer; padding: 0; font: inherit; min-width: 0; }
+.stop__dot { display: block; width: 18px; height: 18px; margin: 14px 0 18px; border-radius: 50%; background: var(--berry); border: 3px solid var(--chalk); transition: transform .3s, background .3s, border-color .3s; }
+.stop__year { display: block; white-space: nowrap; font-family: var(--display); font-size: clamp(24px, 2.6vw, 34px); line-height: 1; }
+.stop__what { display: block; margin-top: 6px; font-size: 13px; font-weight: 500; opacity: .8; }
+.stop:hover .stop__dot { transform: scale(1.25); }
+.stop[aria-selected="true"] .stop__dot { background: var(--pink); border-color: var(--pink); transform: scale(1.35); }
+.stop[aria-selected="true"] .stop__year { color: var(--pink); }
+.detail { margin-top: 36px; display: grid; grid-template-columns: 300px 1fr; gap: clamp(20px, 4vw, 56px); background: var(--chalk); color: var(--ink); padding: clamp(24px, 3.4vw, 48px); }
+.detail > * { min-width: 0; }
+.detail__meta .label { color: var(--berry); display: block; }
+.detail__meta h3 { font-size: clamp(36px, 4vw, 56px); color: var(--berry); margin: 12px 0 10px; }
+.detail__meta p { margin: 0; font-size: 14px; color: #6A3A53; }
+.detail ul { margin: 0; padding: 0; list-style: none; display: grid; gap: 12px; }
+.detail li { padding-left: 26px; position: relative; }
+.detail li::before { content: ""; position: absolute; left: 0; top: .7em; width: 14px; height: 2px; background: var(--berry); }
+.detail.swap { animation: swap .45s ease both; }
+
+/* Work */
+.work { background: var(--chalk); color: var(--ink); padding-block: clamp(72px, 10vw, 130px); }
+.work .head h2 { color: var(--berry); }
+.work .head p { color: #5A2A43; }
+.cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; perspective: 1000px; }
+.card { min-width: 0; position: relative; background: var(--berry); color: var(--chalk); padding: 28px 26px 30px; display: flex; flex-direction: column; gap: 14px; transform-style: preserve-3d; transition: transform .25s ease-out, background .3s; overflow: hidden; }
+.card:nth-child(2) { background: var(--berry-deep); }
+.card:nth-child(3) { background: var(--pink); color: var(--berry-deep); }
+.card .label { opacity: .85; }
+.card h3 { font-size: clamp(40px, 4.4vw, 62px); }
+.card p { margin: 0; font-size: 15px; }
+.card__num { position: absolute; right: -6px; bottom: -40px; font-family: var(--display); font-size: 200px; line-height: 1; opacity: .12; pointer-events: none; }
+.card ul { margin: 6px 0 0; padding: 0; list-style: none; display: flex; flex-wrap: wrap; gap: 6px; }
+.card li { font-size: 11px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; padding: 5px 10px; border: 1.5px solid currentColor; border-radius: 999px; }
+
+
+/* Project art */
+.card__art { margin: -28px -26px 8px; aspect-ratio: 400 / 260; max-width: none; overflow: hidden; position: relative; }
+.card__art img { display: block; width: 100%; height: 100%; max-width: 100%; object-fit: cover; transition: transform .8s cubic-bezier(.2,.7,.2,1), filter .5s; filter: saturate(.92); }
+.card:hover .card__art img { transform: scale(1.06); filter: saturate(1.08); }
+.card__art svg { display: block; width: 100%; height: 100%; transition: transform .8s cubic-bezier(.2,.7,.2,1); }
+.card:hover .card__art svg { transform: scale(1.05); }
+.camellia { transform-box: fill-box; transform-origin: center; transition: transform 1.2s cubic-bezier(.2,.7,.2,1); }
+.card:hover .camellia { transform: rotate(24deg); }
+.card__art::after { content: ""; position: absolute; inset: auto 0 0 0; height: 35%; background: linear-gradient(to top, rgba(59,0,34,.35), transparent); pointer-events: none; }
+.card__art text { font-family: var(--body); }
+.pulse { transform-box: fill-box; transform-origin: center; animation: pulse 2.4s ease-out infinite; }
+@keyframes pulse { from { transform: scale(1); opacity: .7; } to { transform: scale(2.4); opacity: 0; } }
+.mist { transform-box: fill-box; transform-origin: center; animation: mist 4s ease-in-out infinite; }
+.mist:nth-of-type(2) { animation-delay: .8s; } .mist:nth-of-type(3) { animation-delay: 1.6s; }
+@keyframes mist { 0%,100% { transform: translate(0,0); opacity: .35; } 50% { transform: translate(-6px,-10px); opacity: .85; } }
+.journey-path { stroke-dasharray: 6 7; animation: dash 6s linear infinite; }
+@keyframes dash { to { stroke-dashoffset: -130; } }
+.car { transition: transform .7s cubic-bezier(.2,.7,.2,1); }
+.card:hover .car { transform: translateX(14px); }
+.beam { transition: opacity .5s; opacity: .14; }
+.card:hover .beam { opacity: .28; }
+
+/* Education & skills */
+.study { padding-block: clamp(72px, 10vw, 130px); }
+.study__grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(32px, 6vw, 90px); }
+.study__grid > * { min-width: 0; }
+.school { padding-bottom: 28px; margin-bottom: 28px; border-bottom: 2px solid rgba(238,231,234,.18); }
+.school:last-child { border: 0; margin: 0; }
+.school .label { color: var(--pink); }
+.school h3 { font-size: clamp(32px, 3.4vw, 46px); margin: 10px 0 8px; }
+.school p { margin: 0; opacity: .85; }
+.skillset h4 { margin: 0 0 12px; color: var(--pink); }
+.chips { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 30px; padding: 0; list-style: none; }
+.chips li { font-size: 13px; font-weight: 500; padding: 8px 14px; border-radius: 999px; background: rgba(238,231,234,.1); border: 1px solid rgba(238,231,234,.25); transition: background .2s, color .2s, transform .2s; }
+.chips li:hover { background: var(--pink); color: var(--berry-deep); transform: translateY(-2px); }
+.bars { display: grid; gap: 16px; margin-bottom: 30px; }
+.bar__top { display: flex; justify-content: space-between; font-size: 14px; font-weight: 600; margin-bottom: 6px; }
+.bar__top span:last-child { font-weight: 400; opacity: .8; }
+.bar__track { height: 8px; background: rgba(238,231,234,.16); border-radius: 999px; overflow: hidden; }
+.bar__fill { height: 100%; width: var(--w); background: var(--pink); border-radius: 999px; transform-origin: 0 50%; }
+.bars.in .bar__fill { animation: grow 1.2s cubic-bezier(.3,0,.2,1) both; }
+@keyframes grow { from { transform: scaleX(0); } }
+.skillset p { margin: 0; }
+
+/* Contact */
+.contact { background: var(--pink); color: var(--berry-deep); padding-block: clamp(80px, 12vw, 150px) clamp(48px, 6vw, 72px); overflow: hidden; }
+.contact h2 { font-size: clamp(80px, 17vw, 240px); line-height: .85; }
+.contact h2 span { color: var(--berry); display: block; }
+.contact__row { margin-top: 36px; display: flex; flex-wrap: wrap; align-items: center; gap: 14px; }
+.contact__text { margin: 18px 0 0; font-size: clamp(16px, 1.6vw, 19px); font-weight: 600; max-width: 40ch; }
+.email { font-size: clamp(14px, 1.6vw, 18px); font-weight: 600; background: var(--chalk); padding: 14px 18px; border-radius: 999px; overflow-wrap: anywhere; user-select: all; min-width: 0; }
+.btn--berry { background: var(--berry-deep); color: var(--chalk); border-color: var(--berry-deep); }
+.btn--berry:hover { background: var(--berry); border-color: var(--berry); }
+.btn--outline-berry { background: transparent; border-color: var(--berry-deep); color: var(--berry-deep); }
+.btn--outline-berry:hover { background: var(--berry-deep); color: var(--chalk); }
+.toast { position: fixed; left: 50%; bottom: calc(24px + env(safe-area-inset-bottom, 0px)); transform: translate(-50%, 20px); opacity: 0; visibility: hidden; background: var(--berry-deep); color: var(--chalk); padding: 12px 20px; border-radius: 999px; font-weight: 600; font-size: 14px; z-index: 70; transition: transform .35s cubic-bezier(.4,1.4,.5,1), opacity .25s, visibility .25s; }
+.toast.show { transform: translate(-50%, 0); opacity: 1; visibility: visible; }
+.footer { background: var(--berry-deep); color: var(--chalk); }
+.footer .wrap { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; padding-block: 22px; font-size: 13px; }
+.footer a { text-decoration: none; }
+.footer a:hover { color: var(--pink); }
+
+/* Entrance motion (content stays visible at rest) */
+@keyframes rise { from { opacity: 0; transform: translateY(28px); } }
+.reveal.in { animation: rise .8s cubic-bezier(.2,.7,.2,1) both; }
+.hero__name .line { animation: rise .9s cubic-bezier(.2,.7,.2,1) both; }
+.hero__name .line:nth-child(2) { animation-delay: .08s; }
+.hero__name .line:nth-child(3) { animation-delay: .16s; }
+.spark path { animation: draw 2s .4s ease both; }
+@keyframes draw { from { stroke-dashoffset: 400; } }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .lens__grid, .study__grid { grid-template-columns: 1fr; }
+  .cards { grid-template-columns: 1fr; }
+  .figures__grid { grid-template-columns: 1fr; row-gap: 28px; }
+  .fig { border-left: 0; padding: 24px 0 0; border-top: 2px solid rgba(241,135,183,.35); }
+  .fig:first-child { border-top: 0; padding-top: 0; }
+  .detail { grid-template-columns: 1fr; }
+  .track { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+  .stop__what { display: none; }
+}
+@media (max-width: 640px) {
+  .nav__links a:not(.nav__cta) { display: none; }
+  .tile--formula { position: relative; right: auto; bottom: auto; margin-top: 44px; width: 100%; }
+  .stop__year { font-size: 14px; }
+}
+</style>
+</head>
+<body>
+<div class="progress" aria-hidden="true"></div>
+<div class="cursor" aria-hidden="true"></div>
+
+<header class="nav" id="top">
+  <div class="wrap">
+    <a href="#top" class="nav__mark" aria-label="Back to top">TANIA<span>.</span></a>
+    <nav class="nav__links" aria-label="Sections">
+      <a href="#lens">About</a>
+      <a href="#journey">Journey</a>
+      <a href="#work">Work</a>
+      <a href="#study">Skills</a>
+      <a href="#contact" class="nav__cta">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero" aria-label="Introduction">
+    <div class="wrap">
+      <span class="hero__tag label">Portfolio 2026</span>
+      <h1 class="hero__name" data-split>
+        <span class="line">Tania</span>
+        <span class="line line--pink">Medellin</span>
+      </h1>
+      <p class="hero__sub">Six years valuing businesses and brands at EY. Now moving into marketing and brand strategy across luxury, beauty, consumer brands and financial services.</p>
+      <div class="hero__actions">
+        <a class="btn btn--pink" href="#contact">Let's talk →</a>
+        <a class="btn btn--line" href="#journey">See my journey</a>
+      </div>
+      <aside class="tile tile--formula" data-depth="-12" aria-label="Brand valuation method">
+        <span class="label">Relief-from-Royalty</span>
+        <p class="formula">Brand value = Σ (Revenue × Royalty) ÷ (1 + r)<sup>t</sup></p>
+        <svg class="spark" viewBox="0 0 300 70" aria-hidden="true"><path d="M4 62 C 40 58, 60 50, 90 46 S 140 40, 165 30 S 220 22, 245 14 S 280 8, 296 6" /></svg>
+        <small>The method I used to value a Colombian company's brand at EY.</small>
+      </aside>
+    </div>
+  </section>
+
+  <div class="marquee" aria-label="Areas of expertise">
+    <div class="marquee__track">
+      <span>Brand strategy</span><span>Brand valuation</span><span>Market analysis</span><span>Go-to-market</span><span>CRM strategy</span><span>Financial modelling</span><span>Competitive benchmarking</span><span>Brand research</span>
+      <span aria-hidden="true">Brand strategy</span><span aria-hidden="true">Brand valuation</span><span aria-hidden="true">Market analysis</span><span aria-hidden="true">Go-to-market</span><span aria-hidden="true">CRM strategy</span><span aria-hidden="true">Financial modelling</span><span aria-hidden="true">Competitive benchmarking</span><span aria-hidden="true">Brand research</span>
+    </div>
+  </div>
+
+  <section class="lens" id="lens">
+    <div class="wrap lens__grid">
+      <div class="reveal">
+        <span class="label">About</span>
+        <h2>Two lenses,<br /><em>one</em> view.</h2>
+        <p class="lens__intro">I’m bilingual, with six years of experience in corporate finance at EY, specialising in financial modelling and the valuation of companies and intangible assets, including brands.</p>
+        <p class="lens__intro">With a Master’s in Marketing &amp; Creativity at ESCP, I’m now moving into marketing and brand-focused roles across luxury, beauty, consumer brands and financial services, bringing a valuation lens to brand decisions. Switch the lens to see both sides.</p>
+      </div>
+      <div class="reveal">
+        <div class="switch" data-lens="finance" role="group" aria-label="Choose a lens">
+          <span class="switch__pill" aria-hidden="true"></span>
+          <button type="button" id="lens-finance" aria-pressed="true" data-lens="finance">Finance</button>
+          <button type="button" id="lens-marketing" aria-pressed="false" data-lens="marketing">Marketing</button>
+        </div>
+        <div class="lens__panel" data-lens="finance" aria-live="polite">
+          <div class="lens__body">
+            <h3>The analyst</h3>
+            <p>Six years in Strategy &amp; Transactions at EY, Bogotá, progressing from intern to Senior Consultant.</p>
+            <ul>
+              <li>Business and brand valuation, including brand value assessment using the Relief-from-Royalty method</li>
+              <li>Financial statement analysis and valuation modelling</li>
+              <li>Benchmarking, market and competitor analysis across multiple sectors</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="figures" aria-label="At a glance">
+    <div class="wrap figures__grid">
+      <div class="fig reveal"><span class="fig__num" data-count="6">6</span><span class="fig__label">years at EY, from intern to Senior Consultant</span></div>
+      <div class="fig reveal"><span class="fig__num" data-count="7" data-suffix="+">7+</span><span class="fig__label">sectors: energy, healthcare, financial services, insurance, retail, industrial &amp; engineering, and agriculture / natural resources</span></div>
+      <div class="fig reveal"><span class="fig__num" data-count="3" data-suffix="+">3+</span><span class="fig__label">regions: client experience across Latin America, North America and Europe</span></div>
+    </div>
+  </section>
+
+  <section class="journey" id="journey">
+    <div class="wrap">
+      <div class="head reveal">
+        <h2>From valuing businesses in Bogotá to <span>building brands in Paris.</span></h2>
+        <p>Tap the timeline to explore the journey.</p>
+      </div>
+      <div class="track reveal" role="tablist" aria-label="Career timeline">
+        <span class="track__fill" aria-hidden="true"></span>
+        <button class="stop" role="tab" id="stop-0" aria-selected="false" data-i="0"><span class="stop__dot"></span><span class="stop__year">2014</span><span class="stop__what">Finance &amp; International Relations</span></button>
+        <button class="stop" role="tab" id="stop-1" aria-selected="false" data-i="1"><span class="stop__dot"></span><span class="stop__year">2020</span><span class="stop__what">EY Valuation Intern</span></button>
+        <button class="stop" role="tab" id="stop-2" aria-selected="true" data-i="2"><span class="stop__dot"></span><span class="stop__year">2020–2025</span><span class="stop__what">EY Senior Consultant</span></button>
+        <button class="stop" role="tab" id="stop-3" aria-selected="false" data-i="3"><span class="stop__dot"></span><span class="stop__year">2026</span><span class="stop__what">ESCP MSc in Marketing &amp; Creativity</span></button>
+        <button class="stop" role="tab" id="stop-4" aria-selected="false" data-i="4"><span class="stop__dot"></span><span class="stop__year">Next</span><span class="stop__what">Building brands</span></button>
+      </div>
+      <article class="detail" role="tabpanel" aria-live="polite"></article>
+    </div>
+  </section>
+
+  <section class="work" id="work">
+    <div class="wrap">
+      <div class="head reveal">
+        <h2>Selected work</h2>
+        <p>Strategy projects from the MSc Marketing &amp; Creativity at ESCP Business School.</p>
+      </div>
+      <div class="cards">
+        <article class="card reveal" data-tilt>
+          <div class="card__art"><img src="images/revolut.jpg" alt="Black Revolut card resting on chunky pink knitted yarn" loading="lazy" style="object-position:50% 50%" /></div>
+          <span class="label">Fintech · Positioning</span>
+          <h3>Revolut</h3>
+          <p>Competitive benchmark and positioning strategy against Monzo, N26, Starling and Wise, supporting an agency's marketing strategy work.</p>
+          <ul><li>Benchmarking</li><li>Positioning</li></ul>
+          <span class="card__num" aria-hidden="true">1</span>
+        </article>
+        <article class="card reveal" data-tilt>
+          <div class="card__art"><img src="images/fragrance.jpg" alt="Close-up of a Coco Mademoiselle perfume bottle by Chanel in soft rose light" loading="lazy" style="object-position:45% 50%" /></div>
+          <span class="label">Luxury beauty · CRM</span>
+          <h3>Fragrance house</h3>
+          <p>Omnichannel customer journey and CRM strategy for a global luxury fragrance and beauty house, including client segmentation, presented to a brand mentor.</p>
+          <ul><li>Omnichannel</li><li>Segmentation</li></ul>
+          <span class="card__num" aria-hidden="true">2</span>
+        </article>
+        <article class="card reveal" data-tilt>
+          <div class="card__art"><img src="images/ferrari.jpg" alt="Backlit prancing-horse emblem on the facade of a Ferrari store at night" loading="lazy" style="object-position:50% 55%" /></div>
+          <span class="label">Luxury retail · GTM</span>
+          <h3>Ferrari</h3>
+          <p>Go-to-market strategy and an experiential retail concept for a Bond Street flagship in London.</p>
+          <ul><li>Go-to-market</li><li>Retail experience</li></ul>
+          <span class="card__num" aria-hidden="true">3</span>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="study" id="study">
+    <div class="wrap study__grid">
+      <div class="reveal">
+        <div class="head"><h2>Study</h2></div>
+        <div class="school">
+          <span class="label">2026 – Present · London &amp; Paris</span>
+          <h3>MSc Marketing &amp; Creativity</h3>
+          <p>ESCP Business School</p>
+        </div>
+        <div class="school">
+          <span class="label">2014 – 2021 · Bogotá</span>
+          <h3>Finance &amp; International Relations</h3>
+          <p>Universidad Externado de Colombia, Corporate Finance emphasis</p>
+        </div>
+      </div>
+      <div class="skillset reveal">
+        <div class="head"><h2>Skills</h2></div>
+        <h4 class="label">Expertise</h4>
+        <ul class="chips">
+          <li>Brand valuation</li><li>Financial modelling</li><li>Market research</li><li>Competitive analysis</li><li>Data-driven insight</li><li>Proposal development</li><li>Cross-functional coordination</li>
+        </ul>
+        <h4 class="label">Tools</h4>
+        <ul class="chips"><li>Excel</li><li>PowerPoint</li><li>Word</li><li>Outlook</li><li>Canva</li><li>ChatGPT</li><li>Claude</li></ul>
+        <h4 class="label">Languages</h4>
+        <div class="bars">
+          <div><div class="bar__top"><span>Spanish</span><span>Native · C2</span></div><div class="bar__track"><div class="bar__fill" style="--w:100%"></div></div></div>
+          <div><div class="bar__top"><span>English</span><span>Fluent · C1</span></div><div class="bar__track"><div class="bar__fill" style="--w:84%"></div></div></div>
+          <div><div class="bar__top"><span>French</span><span>B1 / Intermediate</span></div><div class="bar__track"><div class="bar__fill" style="--w:50%"></div></div></div>
+        </div>
+        <h4 class="label">Beyond work</h4>
+        <p>Creative and visual design, from event invitations to creative concepts. Culturally curious, and drawn to international brand environments through travel.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="wrap">
+      <h2 class="reveal">Let's<span>talk.</span></h2>
+      <p class="contact__text">Open to marketing and brand roles across luxury, beauty, consumer brands and financial services. Based in Paris.</p>
+      <div class="contact__row">
+        <span class="email" id="email">tania_stheffany.medellin_ortiz@edu.escp.eu</span>
+        <button class="btn btn--berry" type="button" id="copy-email">Copy email</button>
+        <a class="btn btn--outline-berry" href="https://www.linkedin.com/in/taniamedellin" target="_blank" rel="noopener">LinkedIn ↗</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <span>© <span id="year">2026</span> Tania Medellin · Paris</span>
+    <a href="#top">Back to top ↑</a>
+  </div>
+</footer>
+
+<div class="toast" role="status" aria-live="polite">Email copied</div>
+
+<script>
+(function () {
+  const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const fine = window.matchMedia("(pointer: fine)").matches;
+  document.getElementById("year").textContent = new Date().getFullYear();
+
+  // Split hero letters for hover play
+  document.querySelectorAll("[data-split] .line").forEach((line) => {
+    const text = line.textContent;
+    line.setAttribute("aria-label", text);
+    line.textContent = "";
+    [...text].forEach((c) => {
+      const s = document.createElement("span");
+      s.className = "ch"; s.textContent = c; s.setAttribute("aria-hidden", "true");
+      line.appendChild(s);
+    });
+  });
+
+  // Scroll progress
+  const bar = document.querySelector(".progress");
+  const onScroll = () => {
+    const h = document.documentElement.scrollHeight - innerHeight;
+    bar.style.transform = "scaleX(" + (h > 0 ? scrollY / h : 0) + ")";
+  };
+  addEventListener("scroll", onScroll, { passive: true }); onScroll();
+
+  // Custom cursor + hero parallax (desktop only)
+  if (fine && !reduce) {
+    document.documentElement.classList.add("has-cursor");
+    const cur = document.querySelector(".cursor");
+    addEventListener("mousemove", (e) => { cur.style.transform = "translate(" + e.clientX + "px," + e.clientY + "px)"; cur.classList.add("is-on"); });
+    document.querySelectorAll("a, button, .chips li, [data-tilt]").forEach((el) => {
+      el.addEventListener("mouseenter", () => cur.classList.add("is-big"));
+      el.addEventListener("mouseleave", () => cur.classList.remove("is-big"));
+    });
+    const hero = document.querySelector(".hero");
+    const tiles = hero.querySelectorAll("[data-depth]");
+    hero.addEventListener("mousemove", (e) => {
+      const r = hero.getBoundingClientRect();
+      const x = (e.clientX - r.left) / r.width - .5, y = (e.clientY - r.top) / r.height - .5;
+      tiles.forEach((t) => { const d = +t.dataset.depth; t.style.transform = "translate(" + x * d + "px," + y * d + "px) rotate(" + x * d / 8 + "deg)"; });
+    });
+    hero.addEventListener("mouseleave", () => tiles.forEach((t) => (t.style.transform = "")));
+
+    // Card tilt
+    document.querySelectorAll("[data-tilt]").forEach((card) => {
+      card.addEventListener("mousemove", (e) => {
+        const r = card.getBoundingClientRect();
+        const x = (e.clientX - r.left) / r.width - .5, y = (e.clientY - r.top) / r.height - .5;
+        card.style.transform = "rotateY(" + x * 10 + "deg) rotateX(" + -y * 10 + "deg) translateY(-6px)";
+      });
+      card.addEventListener("mouseleave", () => (card.style.transform = ""));
+    });
+  }
+
+  // Lens switch
+  const lenses = {
+    finance: { title: "The analyst", text: "Six years in Strategy & Transactions at EY, Bogotá, progressing from intern to Senior Consultant.",
+      items: ["Business and brand valuation, including brand value assessment using the Relief-from-Royalty method", "Financial statement analysis and valuation modelling", "Benchmarking, market and competitor analysis across multiple sectors"] },
+    marketing: { title: "The strategist", text: "A Master's in Marketing & Creativity at ESCP, applied to fintech, luxury beauty and luxury retail briefs.",
+      items: ["Competitive positioning for a neobank against four challengers", "Omnichannel customer journeys and CRM segmentation", "Go-to-market and experiential retail concepts"] }
+  };
+  const sw = document.querySelector(".switch"), panel = document.querySelector(".lens__panel");
+  sw.querySelectorAll("button").forEach((b) => b.addEventListener("click", () => {
+    const k = b.dataset.lens; if (sw.dataset.lens === k) return;
+    sw.dataset.lens = k; panel.dataset.lens = k;
+    sw.querySelectorAll("button").forEach((x) => x.setAttribute("aria-pressed", String(x === b)));
+    const L = lenses[k];
+    const body = document.createElement("div"); body.className = "lens__body swap";
+    const h = document.createElement("h3"); h.textContent = L.title;
+    const p = document.createElement("p"); p.textContent = L.text;
+    const ul = document.createElement("ul"); L.items.forEach((t) => { const li = document.createElement("li"); li.textContent = t; ul.appendChild(li); });
+    body.append(h, p, ul); panel.replaceChildren(body);
+  }));
+
+  // Journey
+  const stops = [
+    { tag: "2014 – 2021 · Bogotá", title: "Finance and International Relations", org: "Universidad Externado de Colombia",
+      items: ["Professional degree in Finance and International Relations, with a Corporate Finance emphasis.", "The foundation for a career in valuation and financial modelling."] },
+    { tag: "Jan – Jun 2020 · Bogotá", title: "EY Valuation Intern", org: "EY · Corporate Finance",
+      items: ["Analysed client financial statements and supported data adjustments for valuation.", "Prepared macroeconomic and market-specific reports for benchmark and sector analysis."] },
+    { tag: "Jul 2020 – Dec 2025 · Bogotá", title: "EY Senior Consultant", org: "EY · Valuation & Corporate Finance",
+      items: ["Valued a Colombian company's brand as an intangible asset using the Relief-from-Royalty method.", "Led financial statement analysis and valuation modelling for retail, construction and other clients.", "Produced macroeconomic and sector benchmark reports to support client positioning.", "Supported valuation, financial analysis and strategic assessment projects across 7+ sectors and international markets.", "Coordinated client proposals across teams and seniority levels."] },
+    { tag: "2026 – Present · London & Paris", title: "ESCP MSc in Marketing & Creativity", org: "ESCP Business School",
+      items: ["Revolut: competitive benchmark and positioning against Monzo, N26, Starling and Wise.", "Luxury fragrance & beauty house: omnichannel journey and CRM segmentation.", "Ferrari: Bond Street flagship go-to-market and experiential retail."] },
+    { tag: "Next", title: "Building brands", org: "Across luxury, beauty, consumer and financial services",
+      items: ["Marketing and brand strategy roles across industries.", "Brand building, consumer and market research, go-to-market strategy.", "A valuation lens that turns brand ideas into a clear business case."] }
+  ];
+  const detail = document.querySelector(".detail"), fill = document.querySelector(".track__fill");
+  const stopBtns = document.querySelectorAll(".stop");
+  function show(i, animate) {
+    const s = stops[i];
+    stopBtns.forEach((b, j) => { b.setAttribute("aria-selected", String(j === i)); b.tabIndex = j === i ? 0 : -1; });
+    detail.setAttribute("aria-labelledby", "stop-" + i);
+    const meta = document.createElement("div"); meta.className = "detail__meta";
+    const tag = document.createElement("span"); tag.className = "label"; tag.textContent = s.tag;
+    const h = document.createElement("h3"); h.textContent = s.title;
+    const p = document.createElement("p"); p.textContent = s.org;
+    meta.append(tag, h, p);
+    const ul = document.createElement("ul"); s.items.forEach((t) => { const li = document.createElement("li"); li.textContent = t; ul.appendChild(li); });
+    detail.replaceChildren(meta, ul);
+    const b = stopBtns[i]; fill.style.width = (b.offsetLeft + 9) + "px";
+    if (animate) { detail.classList.remove("swap"); void detail.offsetWidth; detail.classList.add("swap"); }
+  }
+  stopBtns.forEach((b, i) => {
+    b.addEventListener("click", () => show(i, true));
+    b.addEventListener("keydown", (e) => {
+      const d = e.key === "ArrowRight" ? 1 : e.key === "ArrowLeft" ? -1 : 0;
+      if (d) { const n = (i + d + stops.length) % stops.length; show(n, true); stopBtns[n].focus(); }
+    });
+  });
+  show(2, false);
+  addEventListener("resize", () => { const sel = [...stopBtns].findIndex((b) => b.getAttribute("aria-selected") === "true"); fill.style.width = (stopBtns[sel].offsetLeft + 9) + "px"; });
+
+  // Reveal, counters and bars
+  function count(el) {
+    const end = +el.dataset.count, suf = el.dataset.suffix || "", t0 = performance.now(), dur = 1300;
+    (function tick(t) { const k = Math.min(1, (t - t0) / dur), e = 1 - Math.pow(1 - k, 3);
+      el.textContent = Math.round(end * e) + suf; if (k < 1) requestAnimationFrame(tick); })(t0);
+  }
+  if ("IntersectionObserver" in window && !reduce) {
+    const io = new IntersectionObserver((entries) => entries.forEach((en) => {
+      if (!en.isIntersecting) return;
+      const el = en.target; el.classList.add("in");
+      el.querySelectorAll("[data-count]").forEach(count);
+      el.querySelectorAll(".bars").forEach((b) => b.classList.add("in"));
+      io.unobserve(el);
+    }), { threshold: .15 });
+    document.querySelectorAll(".reveal").forEach((el) => io.observe(el));
+  }
+
+  // Copy email
+  const toast = document.querySelector(".toast");
+  document.getElementById("copy-email").addEventListener("click", () => {
+    const email = document.getElementById("email").textContent;
+    const done = (msg) => { toast.textContent = msg; toast.classList.add("show"); setTimeout(() => toast.classList.remove("show"), 2000); };
+    const select = () => { const r = document.createRange(); r.selectNodeContents(document.getElementById("email")); const s = getSelection(); s.removeAllRanges(); s.addRange(r); done("Email selected, press copy"); };
+    if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(email).then(() => done("Email copied"), select);
+    else select();
+  });
+})();
+</script>
+
+</body>
+</html>
