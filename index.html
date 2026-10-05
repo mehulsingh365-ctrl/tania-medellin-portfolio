@@ -1122,7 +1122,7 @@
 
     .contact__grid {
       display: grid;
-      grid-template-columns: 64px minmax(max-content, 1fr) minmax(200px, .8fr) auto;
+      grid-template-columns: minmax(max-content, 1fr) minmax(200px, .8fr) auto;
       column-gap: clamp(24px, 4vw, 56px);
       align-items: start;
     }
@@ -1132,7 +1132,7 @@
     }
 
     .contact__title {
-      grid-column: 2;
+      grid-column: 1;
       grid-row: 1;
       font-family: var(--body);
       font-weight: 500;
@@ -1151,7 +1151,7 @@
     }
 
     .contact dl {
-      grid-column: 2;
+      grid-column: 1;
       grid-row: 2;
       margin: 0;
       display: grid;
@@ -1184,7 +1184,7 @@
     }
 
     .contact__social {
-      grid-column: 3;
+      grid-column: 2;
       grid-row: 2;
     }
 
@@ -1204,7 +1204,7 @@
       text-decoration: none;
       padding: 2px 0 6px;
       border-bottom: 1.5px solid var(--berry-deep);
-      transition: color .2s, padding .25s;
+      transition: color .2s;
     }
 
     .contact__links a span {
@@ -1221,7 +1221,7 @@
     }
 
     .contact__sign {
-      grid-column: 4;
+      grid-column: 3;
       grid-row: 2;
     }
 
@@ -1244,40 +1244,37 @@
 
     .contact__rail {
       grid-column: 1;
-      grid-row: 2 / 4;
-      align-self: end;
+      grid-row: 3;
       display: flex;
-      flex-direction: column;
+      align-items: center;
       gap: 22px;
+      margin-top: 26px;
     }
 
     .contact__rail a {
-      display: grid;
-      place-items: center;
-      width: 40px;
-      height: 40px;
+      display: block;
+      line-height: 0;
       color: var(--berry-deep);
-      border-radius: 50%;
-      transition: background .2s, color .2s;
+      transition: color .2s, transform .2s;
     }
 
     .contact__rail a:hover {
-      background: var(--berry-deep);
-      color: var(--pink);
+      color: var(--white);
+      transform: translateY(-2px);
     }
 
     .contact__rail svg {
-      width: 26px;
-      height: 26px;
+      width: 24px;
+      height: 24px;
       fill: currentColor;
     }
 
     .contact__top {
-      grid-column: 4;
+      grid-column: 3;
       grid-row: 3;
       justify-self: end;
-      align-self: end;
-      margin-top: 24px;
+      align-self: center;
+      margin-top: 26px;
       font-size: 14px;
       font-weight: 600;
       letter-spacing: .24em;
@@ -1321,14 +1318,12 @@
       .contact__rail {
         grid-column: 1;
         grid-row: 4;
-        flex-direction: row;
-        align-self: center;
+        margin: 0;
       }
 
       .contact__top {
         grid-column: 2;
         grid-row: 4;
-        align-self: center;
         margin: 0;
       }
     }
@@ -1350,20 +1345,16 @@
         overflow-wrap: anywhere;
       }
 
-      .contact__rail,
-      .contact__top {
-        grid-row: 5;
-      }
-
       .contact__rail {
+        grid-column: 1;
+        grid-row: 5;
         margin-top: 8px;
       }
 
       .contact__top {
+        grid-column: 2;
+        grid-row: 5;
         margin-top: 8px;
-      }
-
-      .contact__top {
         letter-spacing: .16em;
         font-size: 12px;
       }
