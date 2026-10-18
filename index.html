@@ -1,1783 +1,506 @@
 <!doctype html>
 <html lang="en">
-
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <meta name="theme-color" content="#A20161" />
-  <meta property="og:title" content="Tania Medellin" />
-  <meta property="og:description"
-    content="Business and brand valuation at EY, now building brands across luxury, beauty, consumer and financial services." />
-  <link rel="icon"
-    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' fill='%23A20161'/><text x='50%25' y='56%25' text-anchor='middle' dominant-baseline='middle' font-family='Impact,sans-serif' font-size='40' fill='%23F187B7'>T</text></svg>" />
-  <title>Tania Medellin</title>
-  <meta name="description"
-    content="Tania Medellin: six years of business and brand valuation at EY, now moving into marketing and brand strategy across luxury, beauty, consumer brands and financial services." />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Montserrat:wght@400;500;600;700&display=swap"
-    rel="stylesheet" />
-  <style>
-    /* Layout: a fashion-editorial collage. Bold condensed headlines overlap striped "fabric" tiles,
-   and sections alternate berry, pink and chalk like spreads in a lookbook. Single, deliberate look. */
-    :root {
-      --berry: #A20161;
-      --berry-deep: #74003F;
-      --pink: #F187B7;
-      --blush: #F9CFE1;
-      --chalk: #EEE7EA;
-      --white: #FFFFFF;
-      --ink: #3B0022;
-      --mango: #EE8A4A;
-      --gold: #E9B44C;
-
-      --display: "Anton", "Bebas Neue", Impact, "Arial Narrow Bold", sans-serif;
-      --body: "Montserrat", "Helvetica Neue", Arial, sans-serif;
-
-      --gutter: clamp(16px, 5vw, 80px);
-      --max: 1240px;
-      color-scheme: dark;
-    }
-
-    *,
-    *::before,
-    *::after {
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      margin: 0;
-      background: var(--berry);
-      color: var(--chalk);
-      font-family: var(--body);
-      font-size: 16px;
-      line-height: 1.65;
-      font-weight: 400;
-      -webkit-font-smoothing: antialiased;
-      overflow-x: hidden;
-    }
-
-    ::selection {
-      background: var(--pink);
-      color: var(--berry-deep);
-    }
-
-    a {
-      color: inherit;
-    }
-
-    h1,
-    h2,
-    h3 {
-      font-family: var(--display);
-      font-weight: 400;
-      margin: 0;
-      line-height: .92;
-      text-transform: uppercase;
-      letter-spacing: .005em;
-      text-wrap: balance;
-    }
-
-    :focus-visible {
-      outline: 3px solid var(--pink);
-      outline-offset: 3px;
-    }
-
-    .wrap {
-      max-width: var(--max);
-      margin: 0 auto;
-      padding-inline: var(--gutter);
-    }
-
-    .label {
-      font-size: 12px;
-      font-weight: 600;
-      letter-spacing: .2em;
-      text-transform: uppercase;
-    }
-
-    /* Scroll progress + cursor */
-    .progress {
-      position: fixed;
-      top: 0;
-      left: 0;
-      height: 4px;
-      width: 100%;
-      transform-origin: 0 50%;
-      transform: scaleX(0);
-      background: var(--pink);
-      z-index: 50;
-    }
-
-    .cursor {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 14px;
-      height: 14px;
-      margin: -7px 0 0 -7px;
-      border-radius: 50%;
-      background: var(--white);
-      border: 1.5px solid var(--berry-deep);
-      box-shadow: 0 2px 8px rgba(59, 0, 34, .25);
-      pointer-events: none;
-      z-index: 60;
-      transition: width .25s, height .25s, margin .25s, opacity .3s;
-      display: none;
-      opacity: 0;
-    }
-
-    .cursor.is-on {
-      opacity: 1;
-    }
-
-    .cursor.is-big {
-      width: 56px;
-      height: 56px;
-      margin: -28px 0 0 -28px;
-      background: rgba(255, 255, 255, .35);
-    }
-
-    @media (pointer: fine) {
-      .has-cursor .cursor {
-        display: block;
-      }
-    }
-
-    /* Nav */
-    .nav {
-      position: sticky;
-      top: env(safe-area-inset-top, 0px);
-      z-index: 40;
-      background: var(--berry);
-      border-bottom: 1px solid rgba(238, 231, 234, .14);
-    }
-
-    .nav .wrap {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding-block: 16px;
-      gap: 16px;
-    }
-
-    .nav__mark {
-      font-family: var(--display);
-      font-size: 24px;
-      text-decoration: none;
-      letter-spacing: .04em;
-    }
-
-    .nav__mark span {
-      color: var(--pink);
-    }
-
-    .nav__links {
-      display: flex;
-      gap: clamp(14px, 2.6vw, 34px);
-    }
-
-    .nav__links a {
-      text-decoration: none;
-      font-size: 12px;
-      font-weight: 600;
-      letter-spacing: .16em;
-      text-transform: uppercase;
-      opacity: .8;
-      transition: opacity .2s, color .2s;
-    }
-
-    .nav__links a:hover {
-      opacity: 1;
-      color: var(--pink);
-    }
-
-    .nav__links .nav__cta {
-      opacity: 1;
-      color: var(--berry-deep);
-      background: var(--pink);
-      padding: 8px 14px;
-      border-radius: 999px;
-    }
-
-    .nav__links .nav__cta:hover {
-      color: var(--berry-deep);
-      background: var(--blush);
-    }
-
-    /* Hero */
-    .hero {
-      position: relative;
-      padding-block: clamp(36px, 5vw, 64px) clamp(64px, 9vw, 110px);
-      overflow: hidden;
-    }
-
-    .hero .wrap {
-      position: relative;
-    }
-
-    .hero__tag {
-      position: relative;
-      z-index: 2;
-      display: block;
-      color: var(--pink);
-    }
-
-    .hero__name {
-      position: relative;
-      z-index: 2;
-      font-size: clamp(68px, 12.5vw, 180px);
-      line-height: .9;
-      margin-top: clamp(28px, 4vw, 40px);
-    }
-
-    .hero__name .line {
-      display: block;
-    }
-
-    .hero__name .line--pink {
-      color: var(--pink);
-    }
-
-    .hero__name .ch {
-      display: inline-block;
-      transition: transform .35s cubic-bezier(.3, 1.6, .5, 1), color .25s;
-    }
-
-    .hero__name .ch:hover {
-      transform: translateY(-.08em) rotate(-4deg);
-      color: var(--white);
-    }
-
-    .hero__name .line--pink .ch:hover {
-      color: var(--chalk);
-    }
-
-    .hero__sub {
-      position: relative;
-      z-index: 2;
-      margin: clamp(24px, 3vw, 36px) 0 0;
-      max-width: 44ch;
-      font-size: clamp(16px, 1.6vw, 19px);
-      font-weight: 500;
-    }
-
-    .hero__actions {
-      position: relative;
-      z-index: 2;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-top: 32px;
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      padding: 14px 24px;
-      border-radius: 999px;
-      font: 600 13px/1 var(--body);
-      letter-spacing: .14em;
-      text-transform: uppercase;
-      text-decoration: none;
-      cursor: pointer;
-      border: 2px solid var(--pink);
-      transition: background .25s, color .25s, transform .25s;
-    }
-
-    .btn:hover {
-      transform: translateY(-2px);
-    }
-
-    .btn--pink {
-      background: var(--pink);
-      color: var(--berry-deep);
-    }
-
-    .btn--pink:hover {
-      background: var(--chalk);
-      border-color: var(--chalk);
-    }
-
-    .btn--line {
-      background: transparent;
-      color: var(--chalk);
-    }
-
-    .btn--line:hover {
-      background: var(--pink);
-      color: var(--berry-deep);
-    }
-
-    .stack {
-      position: absolute;
-      z-index: 1;
-      right: calc(var(--gutter) - 12px);
-      bottom: clamp(-30px, -1.5vw, -6px);
-      width: clamp(260px, 27vw, 400px);
-      aspect-ratio: 1.2 / 1;
-      max-width: 100%;
-      display: block;
-      text-decoration: none;
-      transition: transform .25s ease-out;
-      animation: deal 1s .35s cubic-bezier(.2, .8, .2, 1) backwards;
-    }
-
-    @keyframes deal {
-      from {
-        opacity: 0;
-        transform: translateY(60px) scale(.92);
-      }
-    }
-
-    .stack__card {
-      position: absolute;
-      top: 6%;
-      left: 23%;
-      width: 54%;
-      margin: 0;
-      padding: 8px 8px 34px;
-      background: var(--chalk);
-      box-shadow: 0 30px 60px -24px rgba(40, 0, 22, .75);
-      transition: transform .6s cubic-bezier(.3, 1.3, .5, 1);
-    }
-
-    .stack__card img {
-      display: block;
-      width: 100%;
-      aspect-ratio: 4 / 5;
-      max-width: 100%;
-      object-fit: cover;
-    }
-
-    .stack__card figcaption {
-      position: absolute;
-      left: 10px;
-      right: 10px;
-      bottom: 9px;
-      font: 600 10px/1.2 var(--body);
-      letter-spacing: .16em;
-      text-transform: uppercase;
-      color: var(--berry-deep);
-    }
-
-    .s1 {
-      transform: rotate(-11deg) translate(-44%, 6%);
-      z-index: 1;
-    }
-
-    .s2 {
-      transform: rotate(2deg) translateY(-2%);
-      z-index: 3;
-    }
-
-    .s3 {
-      transform: rotate(12deg) translate(44%, 8%);
-      z-index: 2;
-    }
-
-    .stack:hover .s1,
-    .stack:focus-visible .s1 {
-      transform: rotate(-17deg) translate(-70%, 4%);
-    }
-
-    .stack:hover .s2,
-    .stack:focus-visible .s2 {
-      transform: rotate(0deg) translateY(-8%) scale(1.04);
-    }
-
-    .stack:hover .s3,
-    .stack:focus-visible .s3 {
-      transform: rotate(18deg) translate(70%, 6%);
-    }
-
-    .stack__hint {
-      position: absolute;
-      z-index: 4;
-      right: 2%;
-      top: 2%;
-      background: var(--pink);
-      color: var(--berry-deep);
-      padding: 8px 14px;
-      border-radius: 999px;
-      transform: rotate(-5deg);
-      font: 600 11px/1 var(--body);
-      letter-spacing: .16em;
-      text-transform: uppercase;
-      box-shadow: 0 10px 20px -10px rgba(40, 0, 22, .6);
-      transition: transform .3s;
-    }
-
-    .stack:hover .stack__hint {
-      transform: rotate(0deg) scale(1.06);
-    }
-
-    .stack__hint {
-      transform: rotate(5deg);
-    }
-
-    /* Marquee */
-    .marquee {
-      background: var(--pink);
-      color: var(--berry-deep);
-      overflow: hidden;
-      border-block: 2px solid var(--berry-deep);
-    }
-
-    .marquee__track {
-      display: flex;
-      width: max-content;
-      animation: slide 32s linear infinite;
-    }
-
-    .marquee:hover .marquee__track {
-      animation-play-state: paused;
-    }
-
-    .marquee__track span {
-      font-family: var(--display);
-      font-size: clamp(26px, 3.6vw, 44px);
-      text-transform: uppercase;
-      padding: 14px 0;
-      white-space: nowrap;
-    }
-
-    .marquee__track span::after {
-      content: "✦";
-      font-family: var(--body);
-      font-size: .5em;
-      margin: 0 .9em;
-      vertical-align: middle;
-    }
-
-    @keyframes slide {
-      to {
-        transform: translateX(-50%);
-      }
-    }
-
-    /* Lens (About) */
-    .lens {
-      background: var(--chalk);
-      color: var(--ink);
-      padding-block: clamp(72px, 10vw, 130px);
-    }
-
-    .lens .label {
-      color: var(--berry);
-    }
-
-    .lens__grid {
-      display: grid;
-      grid-template-columns: 1.05fr 1fr;
-      gap: clamp(32px, 6vw, 90px);
-      align-items: start;
-    }
-
-    .lens__grid>* {
-      min-width: 0;
-    }
-
-    .lens h2 {
-      font-size: clamp(52px, 7.6vw, 104px);
-      color: var(--berry);
-      margin-top: 18px;
-    }
-
-    .lens h2 em {
-      font-style: normal;
-      color: var(--pink);
-      -webkit-text-stroke: 0;
-    }
-
-    .lens__intro {
-      margin: 20px 0 0;
-      max-width: 46ch;
-      color: #5A2A43;
-    }
-
-    .switch {
-      display: inline-flex;
-      padding: 5px;
-      background: var(--white);
-      border-radius: 999px;
-      border: 2px solid var(--berry);
-      position: relative;
-    }
-
-    .switch button {
-      position: relative;
-      z-index: 1;
-      border: 0;
-      background: none;
-      cursor: pointer;
-      padding: 12px 22px;
-      font: 600 13px/1 var(--body);
-      letter-spacing: .14em;
-      text-transform: uppercase;
-      color: var(--berry);
-      border-radius: 999px;
-      transition: color .3s;
-    }
-
-    .switch button[aria-pressed="true"] {
-      color: var(--white);
-    }
-
-    .switch__pill {
-      position: absolute;
-      top: 5px;
-      bottom: 5px;
-      left: 5px;
-      width: calc(50% - 5px);
-      background: var(--berry);
-      border-radius: 999px;
-      transition: transform .45s cubic-bezier(.5, 1.4, .5, 1);
-    }
-
-    .switch[data-lens="marketing"] .switch__pill {
-      transform: translateX(100%);
-    }
-
-    .lens__panel {
-      margin-top: 28px;
-      background: var(--berry);
-      color: var(--chalk);
-      padding: clamp(24px, 3vw, 40px);
-      position: relative;
-      overflow: hidden;
-      transition: background .4s;
-    }
-
-    .lens__panel[data-lens="marketing"] {
-      background: var(--berry-deep);
-    }
-
-    .lens__panel h3 {
-      font-size: clamp(30px, 3.4vw, 44px);
-      color: var(--pink);
-    }
-
-    .lens__panel p {
-      margin: 14px 0 20px;
-    }
-
-    .lens__panel ul {
-      list-style: none;
-      margin: 0;
-      padding: 0;
-      display: grid;
-      gap: 10px;
-    }
-
-    .lens__panel li {
-      display: flex;
-      gap: 12px;
-      align-items: baseline;
-    }
-
-    .lens__panel li::before {
-      content: "";
-      flex: none;
-      width: 10px;
-      height: 10px;
-      background: var(--pink);
-      transform: rotate(45deg) translateY(-1px);
-    }
-
-    .lens__panel .swap {
-      animation: swap .5s ease both;
-    }
-
-    @keyframes swap {
-      from {
-        opacity: 0;
-        transform: translateY(14px);
-      }
-    }
-
-    /* Figures */
-    .figures {
-      background: var(--berry-deep);
-      padding-block: clamp(56px, 8vw, 96px);
-    }
-
-    .figures__grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 0;
-    }
-
-    .fig {
-      padding: 8px clamp(14px, 2vw, 28px);
-      border-left: 2px solid rgba(241, 135, 183, .35);
-    }
-
-    .fig:first-child {
-      border-left: 0;
-      padding-left: 0;
-    }
-
-    .fig__num {
-      font-family: var(--display);
-      font-size: clamp(64px, 8vw, 118px);
-      line-height: 1;
-      color: var(--pink);
-      font-variant-numeric: tabular-nums;
-      display: block;
-    }
-
-    .fig__label {
-      display: block;
-      margin-top: 12px;
-      font-size: 15px;
-      font-weight: 500;
-      max-width: 32ch;
-    }
-
-    /* Section heads */
-    .head {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-end;
-      gap: 20px;
-      flex-wrap: wrap;
-      margin-bottom: clamp(36px, 5vw, 60px);
-    }
-
-    .head h2 {
-      font-size: clamp(56px, 9vw, 128px);
-    }
-
-    .head p {
-      margin: 0;
-      max-width: 38ch;
-      font-weight: 500;
-    }
-
-    /* Journey timeline */
-    .journey {
-      padding-block: clamp(72px, 10vw, 130px);
-    }
-
-    .journey .head {
-      display: block;
-    }
-
-    .journey .head h2 {
-      font-size: clamp(40px, 5.4vw, 80px);
-      line-height: 1.12;
-      max-width: 21ch;
-    }
-
-    .journey .head h2 span {
-      color: var(--pink);
-    }
-
-    .journey .head p {
-      margin-top: 20px;
-    }
-
-    .track {
-      display: grid;
-      grid-template-columns: repeat(5, 1fr);
-      gap: 10px;
-      position: relative;
-    }
-
-    .track::before {
-      content: "";
-      position: absolute;
-      left: 0;
-      right: 0;
-      top: 23px;
-      height: 2px;
-      background: rgba(238, 231, 234, .25);
-    }
-
-    .track__fill {
-      position: absolute;
-      left: 0;
-      top: 23px;
-      height: 2px;
-      background: var(--pink);
-      transition: width .6s cubic-bezier(.5, 0, .2, 1);
-    }
-
-    .stop {
-      position: relative;
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      justify-content: flex-start;
-      align-self: start;
-      text-align: left;
-      background: none;
-      border: 0;
-      color: var(--chalk);
-      cursor: pointer;
-      padding: 0;
-      font: inherit;
-      min-width: 0;
-    }
-
-    .stop__dot {
-      display: block;
-      width: 18px;
-      height: 18px;
-      margin: 14px 0 18px;
-      border-radius: 50%;
-      background: var(--berry);
-      border: 3px solid var(--chalk);
-      transition: transform .3s, background .3s, border-color .3s;
-    }
-
-    .stop__year {
-      display: block;
-      white-space: nowrap;
-      font-family: var(--display);
-      font-size: clamp(24px, 2.6vw, 34px);
-      line-height: 1;
-    }
-
-    .stop__what {
-      display: block;
-      margin-top: 6px;
-      font-size: 13px;
-      font-weight: 500;
-      opacity: .8;
-    }
-
-    .stop:hover .stop__dot {
-      transform: scale(1.25);
-    }
-
-    .stop[aria-selected="true"] .stop__dot {
-      background: var(--pink);
-      border-color: var(--pink);
-      transform: scale(1.35);
-    }
-
-    .stop[aria-selected="true"] .stop__year {
-      color: var(--pink);
-    }
-
-    .detail {
-      margin-top: 36px;
-      display: grid;
-      grid-template-columns: 300px 1fr;
-      gap: clamp(20px, 4vw, 56px);
-      background: var(--chalk);
-      color: var(--ink);
-      padding: clamp(24px, 3.4vw, 48px);
-    }
-
-    .detail>* {
-      min-width: 0;
-    }
-
-    .detail__meta .label {
-      color: var(--berry);
-      display: block;
-    }
-
-    .detail__meta h3 {
-      font-size: clamp(36px, 4vw, 56px);
-      color: var(--berry);
-      margin: 12px 0 10px;
-    }
-
-    .detail__meta p {
-      margin: 0;
-      font-size: 14px;
-      color: #6A3A53;
-    }
-
-    .detail ul {
-      margin: 0;
-      padding: 0;
-      list-style: none;
-      display: grid;
-      gap: 12px;
-    }
-
-    .detail li {
-      padding-left: 26px;
-      position: relative;
-    }
-
-    .detail li::before {
-      content: "";
-      position: absolute;
-      left: 0;
-      top: .7em;
-      width: 14px;
-      height: 2px;
-      background: var(--berry);
-    }
-
-    .detail.swap {
-      animation: swap .45s ease both;
-    }
-
-    /* Work */
-    .work {
-      background: var(--chalk);
-      color: var(--ink);
-      padding-block: clamp(72px, 10vw, 130px);
-    }
-
-    .work .head h2 {
-      color: var(--berry);
-    }
-
-    .work .head p {
-      color: #5A2A43;
-    }
-
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 18px;
-      perspective: 1000px;
-    }
-
-    .card {
-      min-width: 0;
-      position: relative;
-      background: var(--berry);
-      color: var(--chalk);
-      padding: 28px 26px 30px;
-      display: flex;
-      flex-direction: column;
-      gap: 14px;
-      transform-style: preserve-3d;
-      transition: transform .25s ease-out, background .3s;
-      overflow: hidden;
-    }
-
-    .card:nth-child(2) {
-      background: var(--berry-deep);
-    }
-
-    .card:nth-child(3) {
-      background: var(--pink);
-      color: var(--berry-deep);
-    }
-
-    .card .label {
-      opacity: .85;
-    }
-
-    .card h3 {
-      font-size: clamp(40px, 4.4vw, 62px);
-    }
-
-    .card p {
-      margin: 0;
-      font-size: 15px;
-    }
-
-    .card__num {
-      position: absolute;
-      right: -6px;
-      bottom: -40px;
-      font-family: var(--display);
-      font-size: 200px;
-      line-height: 1;
-      opacity: .12;
-      pointer-events: none;
-    }
-
-    .card ul {
-      margin: 6px 0 0;
-      padding: 0;
-      list-style: none;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 6px;
-    }
-
-    .card li {
-      font-size: 11px;
-      font-weight: 600;
-      letter-spacing: .1em;
-      text-transform: uppercase;
-      padding: 5px 10px;
-      border: 1.5px solid currentColor;
-      border-radius: 999px;
-    }
-
-
-    /* Project art */
-    .card__art {
-      margin: -28px -26px 8px;
-      aspect-ratio: 400 / 260;
-      max-width: none;
-      overflow: hidden;
-      position: relative;
-    }
-
-    .card__art img {
-      display: block;
-      width: 100%;
-      height: 100%;
-      max-width: 100%;
-      object-fit: cover;
-      transition: transform .8s cubic-bezier(.2, .7, .2, 1), filter .5s;
-      filter: saturate(.92);
-    }
-
-    .card:hover .card__art img {
-      transform: scale(1.06);
-      filter: saturate(1.08);
-    }
-
-    .card__art svg {
-      display: block;
-      width: 100%;
-      height: 100%;
-      transition: transform .8s cubic-bezier(.2, .7, .2, 1);
-    }
-
-    .card:hover .card__art svg {
-      transform: scale(1.05);
-    }
-
-    .camellia {
-      transform-box: fill-box;
-      transform-origin: center;
-      transition: transform 1.2s cubic-bezier(.2, .7, .2, 1);
-    }
-
-    .card:hover .camellia {
-      transform: rotate(24deg);
-    }
-
-    .card__art::after {
-      content: "";
-      position: absolute;
-      inset: auto 0 0 0;
-      height: 35%;
-      background: linear-gradient(to top, rgba(59, 0, 34, .35), transparent);
-      pointer-events: none;
-    }
-
-    .card__art text {
-      font-family: var(--body);
-    }
-
-    .pulse {
-      transform-box: fill-box;
-      transform-origin: center;
-      animation: pulse 2.4s ease-out infinite;
-    }
-
-    @keyframes pulse {
-      from {
-        transform: scale(1);
-        opacity: .7;
-      }
-
-      to {
-        transform: scale(2.4);
-        opacity: 0;
-      }
-    }
-
-    .mist {
-      transform-box: fill-box;
-      transform-origin: center;
-      animation: mist 4s ease-in-out infinite;
-    }
-
-    .mist:nth-of-type(2) {
-      animation-delay: .8s;
-    }
-
-    .mist:nth-of-type(3) {
-      animation-delay: 1.6s;
-    }
-
-    @keyframes mist {
-
-      0%,
-      100% {
-        transform: translate(0, 0);
-        opacity: .35;
-      }
-
-      50% {
-        transform: translate(-6px, -10px);
-        opacity: .85;
-      }
-    }
-
-    .journey-path {
-      stroke-dasharray: 6 7;
-      animation: dash 6s linear infinite;
-    }
-
-    @keyframes dash {
-      to {
-        stroke-dashoffset: -130;
-      }
-    }
-
-    .car {
-      transition: transform .7s cubic-bezier(.2, .7, .2, 1);
-    }
-
-    .card:hover .car {
-      transform: translateX(14px);
-    }
-
-    .beam {
-      transition: opacity .5s;
-      opacity: .14;
-    }
-
-    .card:hover .beam {
-      opacity: .28;
-    }
-
-    /* Education & skills */
-    .study {
-      padding-block: clamp(72px, 10vw, 130px);
-    }
-
-    .study__grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: clamp(32px, 6vw, 90px);
-    }
-
-    .study__grid>* {
-      min-width: 0;
-    }
-
-    .school {
-      padding-bottom: 28px;
-      margin-bottom: 28px;
-      border-bottom: 2px solid rgba(238, 231, 234, .18);
-    }
-
-    .school:last-child {
-      border: 0;
-      margin: 0;
-    }
-
-    .school .label {
-      color: var(--pink);
-    }
-
-    .school h3 {
-      font-size: clamp(32px, 3.4vw, 46px);
-      margin: 10px 0 8px;
-    }
-
-    .school p {
-      margin: 0;
-      opacity: .85;
-    }
-
-    .skillset h4 {
-      margin: 0 0 12px;
-      color: var(--pink);
-    }
-
-    .chips {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin: 0 0 30px;
-      padding: 0;
-      list-style: none;
-    }
-
-    .chips li {
-      font-size: 13px;
-      font-weight: 500;
-      padding: 8px 14px;
-      border-radius: 999px;
-      background: rgba(238, 231, 234, .1);
-      border: 1px solid rgba(238, 231, 234, .25);
-      transition: background .2s, color .2s, transform .2s;
-    }
-
-    .chips li:hover {
-      background: var(--pink);
-      color: var(--berry-deep);
-      transform: translateY(-2px);
-    }
-
-    .bars {
-      display: grid;
-      gap: 16px;
-      margin-bottom: 30px;
-    }
-
-    .bar__top {
-      display: flex;
-      justify-content: space-between;
-      font-size: 14px;
-      font-weight: 600;
-      margin-bottom: 6px;
-    }
-
-    .bar__top span:last-child {
-      font-weight: 400;
-      opacity: .8;
-    }
-
-    .bar__track {
-      height: 8px;
-      background: rgba(238, 231, 234, .16);
-      border-radius: 999px;
-      overflow: hidden;
-    }
-
-    .bar__fill {
-      height: 100%;
-      width: var(--w);
-      background: var(--pink);
-      border-radius: 999px;
-      transform-origin: 0 50%;
-    }
-
-    .bars.in .bar__fill {
-      animation: grow 1.2s cubic-bezier(.3, 0, .2, 1) both;
-    }
-
-    @keyframes grow {
-      from {
-        transform: scaleX(0);
-      }
-    }
-
-    .skillset p {
-      margin: 0;
-    }
-
-    /* Contact */
-    .contact {
-      background: var(--chalk);
-      color: var(--berry-deep);
-      padding-block: clamp(32px, 4vw, 48px) clamp(28px, 3.4vw, 40px);
-    }
-
-    .contact__grid {
-      display: grid;
-      grid-template-columns: minmax(max-content, 1fr) minmax(200px, .8fr) auto;
-      column-gap: clamp(24px, 4vw, 56px);
-      align-items: start;
-    }
-
-    .contact__grid>* {
-      min-width: 0;
-    }
-
-    .contact__title {
-      grid-column: 1;
-      grid-row: 1;
-      font-family: var(--body);
-      font-weight: 500;
-      text-transform: uppercase;
-      font-size: clamp(40px, 4.4vw, 60px);
-      line-height: 1;
-      letter-spacing: -.01em;
-      margin: 0 0 14px;
-    }
-
-    .contact__label {
-      display: block;
-      font-size: 14px;
-      font-weight: 500;
-      opacity: .65;
-    }
-
-    .contact dl {
-      grid-column: 1;
-      grid-row: 2;
-      margin: 0;
-      display: grid;
-      gap: 18px;
-    }
-
-    .contact dt {
-      font-size: 14px;
-      font-weight: 500;
-      opacity: .65;
-    }
-
-    .contact dd {
-      margin: 10px 0 0;
-      font-size: 15px;
-      font-weight: 500;
-    }
-
-    .contact dd a {
-      text-decoration: none;
-    }
-
-    .contact dd a:hover {
-      text-decoration: underline;
-      text-underline-offset: 3px;
-    }
-
-    .contact #email {
-      white-space: nowrap;
-    }
-
-    .contact__social {
-      grid-column: 2;
-      grid-row: 2;
-    }
-
-    .contact__links {
-      display: grid;
-      width: max-content;
-      gap: 6px;
-      margin-top: 8px;
-    }
-
-    .contact__links a {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      font-size: clamp(18px, 1.7vw, 22px);
-      font-weight: 500;
-      text-decoration: none;
-      padding: 2px 0 6px;
-      border-bottom: 1.5px solid var(--berry-deep);
-      transition: color .2s;
-    }
-
-    .contact__links a span {
-      font-size: .85em;
-      transition: transform .25s;
-    }
-
-    .contact__links a:hover {
-      color: var(--berry);
-    }
-
-    .contact__links a:hover span {
-      transform: translate(3px, -3px);
-    }
-
-    .contact__sign {
-      grid-column: 3;
-      grid-row: 2;
-    }
-
-    .contact__sign p {
-      margin: 0;
-      font-size: clamp(16px, 1.5vw, 19px);
-      font-weight: 500;
-      line-height: 1.5;
-    }
-
-    .contact__sign .who {
-      color: var(--berry);
-    }
-
-    .contact__sign .year {
-      margin-top: 22px;
-      opacity: .7;
-      font-size: clamp(17px, 1.6vw, 21px);
-    }
-
-    .contact__rail {
-      grid-column: 1;
-      grid-row: 3;
-      display: flex;
-      align-items: center;
-      gap: 22px;
-      margin-top: 26px;
-    }
-
-    .contact__rail a {
-      display: block;
-      line-height: 0;
-      color: var(--berry-deep);
-      transition: color .2s, transform .2s;
-    }
-
-    .contact__rail a:hover {
-      color: var(--berry);
-      transform: translateY(-2px);
-    }
-
-    .contact__rail svg {
-      width: 24px;
-      height: 24px;
-      fill: currentColor;
-    }
-
-    .contact__top {
-      grid-column: 3;
-      grid-row: 3;
-      justify-self: end;
-      align-self: center;
-      margin-top: 26px;
-      font-size: 14px;
-      font-weight: 600;
-      letter-spacing: .24em;
-      text-transform: uppercase;
-      text-decoration: none;
-      opacity: .6;
-      transition: opacity .2s;
-      white-space: nowrap;
-    }
-
-    .contact__top:hover {
-      opacity: 1;
-    }
-
-    @media (max-width: 960px) {
-      .contact__grid {
-        grid-template-columns: 1fr 1fr;
-        row-gap: 26px;
-      }
-
-      .contact__title {
-        grid-column: 1 / -1;
-        margin: 0;
-      }
-
-      .contact dl {
-        grid-column: 1;
-        grid-row: 2;
-      }
-
-      .contact__social {
-        grid-column: 2;
-        grid-row: 2;
-      }
-
-      .contact__sign {
-        grid-column: 1 / -1;
-        grid-row: 3;
-      }
-
-      .contact__rail {
-        grid-column: 1;
-        grid-row: 4;
-        margin: 0;
-      }
-
-      .contact__top {
-        grid-column: 2;
-        grid-row: 4;
-        margin: 0;
-      }
-    }
-
-    @media (max-width: 560px) {
-      .contact__grid {
-        grid-template-columns: 1fr auto;
-      }
-
-      .contact dl,
-      .contact__social,
-      .contact__sign {
-        grid-column: 1 / -1;
-        grid-row: auto;
-      }
-
-      .contact #email {
-        white-space: normal;
-        overflow-wrap: anywhere;
-      }
-
-      .contact__rail {
-        grid-column: 1;
-        grid-row: 5;
-        margin-top: 8px;
-      }
-
-      .contact__top {
-        grid-column: 2;
-        grid-row: 5;
-        margin-top: 8px;
-        letter-spacing: .16em;
-        font-size: 12px;
-      }
-    }
-
-    .toast {
-      position: fixed;
-      left: 50%;
-      bottom: calc(24px + env(safe-area-inset-bottom, 0px));
-      transform: translate(-50%, 20px);
-      opacity: 0;
-      visibility: hidden;
-      background: var(--berry-deep);
-      color: var(--chalk);
-      padding: 12px 20px;
-      border-radius: 999px;
-      font-weight: 600;
-      font-size: 14px;
-      z-index: 70;
-      transition: transform .35s cubic-bezier(.4, 1.4, .5, 1), opacity .25s, visibility .25s;
-    }
-
-    .toast.show {
-      transform: translate(-50%, 0);
-      opacity: 1;
-      visibility: visible;
-    }
-
-    .footer {
-      background: var(--berry-deep);
-      color: var(--chalk);
-    }
-
-    .footer .wrap {
-      display: flex;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 12px;
-      padding-block: 22px;
-      font-size: 13px;
-    }
-
-    .footer a {
-      text-decoration: none;
-    }
-
-    .footer a:hover {
-      color: var(--pink);
-    }
-
-    /* Entrance motion (content stays visible at rest) */
-    @keyframes rise {
-      from {
-        opacity: 0;
-        transform: translateY(28px);
-      }
-    }
-
-    .reveal.in {
-      animation: rise .8s cubic-bezier(.2, .7, .2, 1) both;
-    }
-
-    .hero__name .line {
-      animation: rise .9s cubic-bezier(.2, .7, .2, 1) both;
-    }
-
-    .hero__name .line:nth-child(2) {
-      animation-delay: .08s;
-    }
-
-    .hero__name .line:nth-child(3) {
-      animation-delay: .16s;
-    }
-
-    @keyframes draw {
-      from {
-        stroke-dashoffset: 400;
-      }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      html {
-        scroll-behavior: auto;
-      }
-
-      *,
-      *::before,
-      *::after {
-        animation: none !important;
-        transition: none !important;
-      }
-    }
-
-    /* Responsive */
-    @media (max-width: 900px) {
-
-      .lens__grid,
-      .study__grid {
-        grid-template-columns: 1fr;
-      }
-
-      .cards {
-        grid-template-columns: 1fr;
-      }
-
-      .figures__grid {
-        grid-template-columns: 1fr;
-        row-gap: 28px;
-      }
-
-      .fig {
-        border-left: 0;
-        padding: 24px 0 0;
-        border-top: 2px solid rgba(241, 135, 183, .35);
-      }
-
-      .fig:first-child {
-        border-top: 0;
-        padding-top: 0;
-      }
-
-      .detail {
-        grid-template-columns: 1fr;
-      }
-
-      .track {
-        grid-template-columns: repeat(5, minmax(0, 1fr));
-      }
-
-      .stop__what {
-        display: none;
-      }
-    }
-
-    @media (max-width: 640px) {
-      .nav__links a:not(.nav__cta) {
-        display: none;
-      }
-
-      .stack {
-        position: relative;
-        right: auto;
-        bottom: auto;
-        width: min(340px, 92%);
-        margin: 40px auto 10px;
-      }
-
-      .stop__year {
-        font-size: 14px;
-      }
-    }
-  </style>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="theme-color" content="#3B2820" />
+<meta property="og:title" content="Tania Medellin" />
+<meta property="og:description" content="Marketing with a financial edge: six years of corporate finance at EY, now building brands." />
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' fill='%233B2820'/><text x='50%25' y='58%25' text-anchor='middle' dominant-baseline='middle' font-family='Georgia,serif' font-size='40' fill='%23F3EEE8'>T</text></svg>" />
+<title>Tania Medellin</title>
+<meta name="description" content="Tania Medellin: marketing with a financial edge. Six years of corporate finance at EY, now building brands across luxury, beauty, consumer brands and financial services." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Hanken+Grotesk:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+/* Layout: an editorial "folio" told in chapters. Fixed left rail, full-height panels that travel sideways on
+   desktop (vertical stack on phones), thin high-contrast serif for display words, quiet grotesk for reading. */
+:root {
+  --brown: #3B2820;
+  --brown-deep: #2B1D17;
+  --brown-lift: #47322a;
+  --cream: #F3EEE8;
+  --paper: #FAF9F6;
+  --stone: #EDEAE6;
+  --taupe: #8A8178;
+  --sand: #C8C0B8;
+  --line: rgba(59, 40, 32, .18);
+  --line-dark: rgba(243, 238, 232, .18);
+
+  --serif: "Instrument Serif", "Cormorant Garamond", "Times New Roman", serif;
+  --sans: "Hanken Grotesk", "Helvetica Neue", Arial, sans-serif;
+
+  --rail: 56px;
+  --pad: clamp(20px, 3.4vw, 56px);
+  color-scheme: light;
+}
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: var(--paper); color: var(--brown); font-family: var(--sans); font-size: 16px; line-height: 1.5; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+::selection { background: var(--brown); color: var(--cream); }
+a { color: inherit; text-decoration: none; }
+img { display: block; max-width: 100%; }
+h1, h2, h3, p, ul, ol, dl, dd, figure { margin: 0; }
+ul, ol { padding: 0; list-style: none; }
+button { font: inherit; color: inherit; background: none; border: 0; padding: 0; cursor: pointer; }
+:focus-visible { outline: 1.5px solid currentColor; outline-offset: 4px; }
+
+.serif { font-family: var(--serif); font-weight: 400; text-transform: uppercase; letter-spacing: -.02em; line-height: .92; }
+.eyebrow { font-size: 12px; font-weight: 500; letter-spacing: .08em; text-transform: uppercase; }
+.chapter { display: flex; flex-direction: column; gap: 8px; }
+.chapter .serif { font-size: clamp(22px, 2vw, 30px); letter-spacing: 0; }
+.ulink { position: relative; display: inline-flex; align-items: center; gap: 8px; font-weight: 500; }
+.ulink::after { content: ""; position: absolute; left: 0; right: 0; bottom: -3px; height: 1px; background: currentColor; }
+.ulink:hover::after { animation: uline .6s cubic-bezier(.6,0,.2,1); }
+@keyframes uline { 0% { transform: scaleX(1); transform-origin: right; } 49% { transform: scaleX(0); transform-origin: right; } 50% { transform: scaleX(0); transform-origin: left; } 100% { transform: scaleX(1); transform-origin: left; } }
+.progress { position: fixed; z-index: 70; left: 0; right: 0; bottom: 0; height: 2px; background: var(--taupe); transform-origin: 0 50%; transform: scaleX(0); pointer-events: none; }
+
+/* ---------- Rail ---------- */
+.rail { position: fixed; z-index: 50; left: 0; top: 0; bottom: 0; width: var(--rail); display: flex; flex-direction: column; align-items: center; justify-content: space-between; padding: 0 0 22px; border-right: 1px solid var(--line); background: var(--paper); color: var(--brown); transition: background .4s, color .4s, border-color .4s; }
+.rail[data-tone="dark"] { background: var(--brown); color: var(--cream); border-color: var(--line-dark); }
+.rail__menu { width: var(--rail); height: var(--rail); display: grid; place-content: center; gap: 6px; border-bottom: 1px solid; border-color: inherit; }
+.rail__menu span { display: block; width: 20px; height: 1px; background: currentColor; transition: transform .3s; }
+.rail__menu:hover span:first-child { transform: translateX(3px); }
+.rail__menu:hover span:last-child { transform: translateX(-3px); }
+.rail__txt { writing-mode: vertical-rl; transform: rotate(180deg); font-size: 11px; letter-spacing: .1em; text-transform: uppercase; white-space: nowrap; }
+.rail__name { font-family: var(--serif); font-size: 15px; letter-spacing: .04em; }
+
+/* ---------- Menu ---------- */
+.menu { position: fixed; z-index: 60; inset: 0; background: var(--brown-deep); color: var(--cream); display: grid; grid-template-columns: 1fr auto; padding: var(--pad) var(--pad) var(--pad) calc(var(--rail) + var(--pad)); opacity: 0; visibility: hidden; transition: opacity .45s, visibility .45s; }
+.menu.open { opacity: 1; visibility: visible; }
+.menu__close { position: absolute; left: 0; top: 0; width: var(--rail); height: var(--rail); display: grid; place-items: center; font-size: 26px; font-weight: 300; border-right: 1px solid var(--line-dark); border-bottom: 1px solid var(--line-dark); }
+.menu__list { align-self: center; display: grid; gap: clamp(0px, 1vh, 10px); }
+.menu__list a { display: flex; align-items: baseline; gap: 22px; font-size: clamp(44px, 9vh, 104px); line-height: 1.05; transition: opacity .3s; }
+.menu__list:hover a:not(:hover) { opacity: .3; }
+.menu__num { font-family: var(--serif); font-size: .3em; width: 2.2em; flex: none; }
+.menu__lbl { position: relative; display: inline-block; }
+.menu__lbl .s { display: block; font-weight: 400; transition: opacity .35s, transform .35s; }
+.menu__lbl .e { position: absolute; left: 0; top: 0; font-family: var(--serif); text-transform: uppercase; opacity: 0; transform: translateY(10%); transition: opacity .35s, transform .35s; white-space: nowrap; }
+.menu__list a:hover .s, .menu__list a:focus-visible .s { opacity: 0; transform: translateY(-10%); }
+.menu__list a:hover .e, .menu__list a:focus-visible .e { opacity: 1; transform: none; }
+.menu__side { align-self: end; display: grid; gap: 10px; justify-items: end; font-size: clamp(16px, 1.6vw, 22px); font-weight: 500; }
+.menu__side .eyebrow { color: var(--sand); }
+
+/* ---------- Panels (shared) ---------- */
+.panel { position: relative; }
+.dark { background: var(--brown); color: var(--cream); }
+.darker { background: var(--brown-deep); color: var(--cream); }
+.stone { background: var(--stone); }
+.paper { background: var(--paper); }
+.muted { color: var(--taupe); }
+.dark .muted, .darker .muted { color: var(--sand); }
+
+/* Reveal: content is visible at rest; lines rise once when a panel arrives */
+.rise { display: block; overflow: hidden; padding-bottom: .04em; }
+.rise > span { display: block; }
+.in .rise > span { animation: up .9s cubic-bezier(.2,.75,.2,1) both; }
+.in .rise:nth-child(2) > span { animation-delay: .08s; }
+@keyframes up { from { transform: translateY(105%); } }
+.fade { transition: opacity .9s ease, transform .9s cubic-bezier(.2,.75,.2,1); }
+.pre .fade { opacity: 0; transform: translateY(16px); }
+
+/* ---------- Hero ---------- */
+.p-hero { display: grid; grid-template-rows: 1fr auto; }
+.hero__name { font-size: clamp(64px, min(15.5vw, 30vh), 260px); letter-spacing: -.035em; line-height: .86; }
+.hero__lede { font-size: clamp(18px, 1.7vw, 26px); line-height: 1.3; max-width: 21ch; }
+.hero__meta { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; align-items: end; font-size: clamp(14px, 1.1vw, 17px); line-height: 1.35; }
+.hero__meta .scroll { justify-self: end; font-family: var(--serif); font-size: clamp(22px, 2vw, 30px); text-transform: uppercase; display: inline-flex; gap: 10px; align-items: center; }
+.scroll i { font-style: normal; display: inline-block; animation: nudge 2.2s ease-in-out infinite; }
+@keyframes nudge { 50% { transform: translateX(6px); } }
+.clock { font-variant-numeric: tabular-nums; }
+
+/* ---------- Intro ---------- */
+.intro__lead { font-size: clamp(22px, 2.2vw, 36px); font-weight: 500; line-height: 1.28; letter-spacing: -.01em; }
+.intro__body { font-size: clamp(15px, 1.1vw, 17px); line-height: 1.6; }
+.portrait { position: relative; overflow: hidden; background: var(--stone); }
+.portrait img { width: 100%; height: 100%; object-fit: cover; transition: transform 1.2s cubic-bezier(.2,.75,.2,1); }
+.portrait:hover img { transform: scale(1.03); }
+.portrait figcaption { position: absolute; left: 14px; bottom: 12px; color: var(--cream); font-size: 12px; letter-spacing: .08em; text-transform: uppercase; text-shadow: 0 1px 8px rgba(0,0,0,.35); }
+.brings { display: grid; border-top: 1px solid var(--line); }
+.brings li { padding: 12px 0; border-bottom: 1px solid var(--line); font-size: clamp(14px, 1vw, 16px); display: grid; grid-template-columns: 34px 1fr; }
+.brings li span { color: var(--taupe); font-size: 12px; padding-top: 3px; }
+.figs { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.figs dt { font-family: var(--serif); font-size: clamp(44px, 4.6vw, 76px); line-height: 1; }
+.figs dd { font-size: 12px; letter-spacing: .06em; text-transform: uppercase; margin-top: 6px; color: var(--taupe); }
+
+/* ---------- The work wall ---------- */
+.wall__word { font-size: clamp(90px, min(15vw, 30vh), 270px); letter-spacing: -.04em; line-height: .8; }
+.tile { overflow: hidden; background: var(--stone); flex: none; }
+.tile img { width: 100%; height: 100%; object-fit: cover; transition: transform 1.2s cubic-bezier(.2,.75,.2,1); }
+.tile:hover img { transform: scale(1.04); }
+
+/* ---------- Work list ---------- */
+.works { border-top: 1px solid var(--line); }
+.work { border-bottom: 1px solid var(--line); }
+.work__btn { width: 100%; display: grid; grid-template-columns: 44px 1fr auto; align-items: baseline; gap: 12px; padding: clamp(8px, 1.4vh, 16px) 0; text-align: left; transition: opacity .35s; }
+.works:hover .work__btn:not(:hover) { opacity: .35; }
+.work__idx { font-family: var(--serif); font-size: 18px; }
+.work__name { font-size: clamp(40px, min(5.4vw, 9vh), 92px); font-weight: 500; letter-spacing: -.03em; line-height: 1.05; }
+.work__cat { font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: var(--taupe); white-space: nowrap; }
+.work__arrow { display: inline-block; font-size: .5em; vertical-align: .4em; margin-left: .2em; opacity: 0; transform: translate(-8px, 8px); transition: opacity .35s, transform .35s; }
+.work[aria-current="true"] .work__arrow, .work__btn:hover .work__arrow { opacity: 1; transform: none; }
+.work__detail { font-size: clamp(15px, 1.1vw, 17px); line-height: 1.55; max-width: 46ch; }
+.work__tags { display: flex; flex-wrap: wrap; gap: 8px 18px; margin-top: 14px; font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: var(--taupe); }
+.preview { position: relative; overflow: hidden; background: var(--stone); aspect-ratio: 4 / 5; max-width: 100%; }
+.preview img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transform: scale(1.04); transition: opacity .6s ease, transform 1.2s cubic-bezier(.2,.75,.2,1); }
+.preview img.on { opacity: 1; transform: none; }
+.work__img, .work__more { display: none; }
+
+/* ---------- What I do ---------- */
+.do__col { display: grid; grid-template-rows: auto 1fr auto; gap: 24px; border-left: 1px solid var(--line-dark); padding: 0 clamp(18px, 2vw, 32px); transition: background .4s; }
+.do__col:hover { background: var(--brown-lift); }
+.do__num { font-family: var(--serif); font-size: clamp(54px, 5.4vw, 96px); line-height: 1; }
+.do__title { align-self: center; font-size: clamp(26px, 2.4vw, 40px); line-height: 1; letter-spacing: -.01em; }
+.do__text { font-size: clamp(14px, 1vw, 16px); line-height: 1.55; max-width: 32ch; color: var(--sand); }
+
+/* ---------- Experience ---------- */
+.exp { border-top: 1px solid var(--line); }
+.exp__item { border-bottom: 1px solid var(--line); }
+.exp__btn { width: 100%; display: grid; grid-template-columns: 150px 1fr 24px; gap: 16px; align-items: baseline; padding: clamp(10px, 1.6vh, 18px) 0; text-align: left; }
+.exp__when { font-size: 13px; letter-spacing: .04em; color: var(--taupe); font-variant-numeric: tabular-nums; }
+.exp__role { font-size: clamp(20px, 1.9vw, 30px); font-weight: 500; letter-spacing: -.01em; line-height: 1.15; }
+.exp__org { display: block; font-size: 13px; font-weight: 400; color: var(--taupe); margin-top: 4px; letter-spacing: 0; }
+.exp__plus { position: relative; width: 14px; height: 14px; justify-self: end; align-self: center; }
+.exp__plus::before, .exp__plus::after { content: ""; position: absolute; left: 0; right: 0; top: 50%; height: 1px; background: currentColor; transition: transform .35s; }
+.exp__plus::after { transform: rotate(90deg); }
+.exp__item.open .exp__plus::after { transform: rotate(0); }
+.exp__body { display: grid; grid-template-rows: 0fr; transition: grid-template-rows .45s cubic-bezier(.2,.75,.2,1); }
+.exp__item.open .exp__body { grid-template-rows: 1fr; }
+.exp__body > div { overflow: hidden; }
+.exp__body ul { display: grid; gap: 7px; padding: 0 0 18px; margin-left: 166px; font-size: clamp(14px, 1vw, 15.5px); line-height: 1.5; }
+.exp__body li { padding-left: 18px; position: relative; }
+.exp__body li::before { content: "-"; position: absolute; left: 0; color: var(--taupe); }
+.exp__photo { position: relative; overflow: hidden; background: var(--stone); }
+.exp__photo img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 50%; }
+
+/* ---------- Toolbox ---------- */
+.tool h3 { font-family: var(--serif); font-weight: 400; font-size: clamp(26px, 2.2vw, 36px); text-transform: uppercase; letter-spacing: -.01em; margin-bottom: 14px; }
+.tool ul { border-top: 1px solid var(--line); }
+.tool li { display: flex; justify-content: space-between; gap: 16px; padding: 10px 0; border-bottom: 1px solid var(--line); font-size: clamp(15px, 1.15vw, 18px); }
+.tool li span { color: var(--taupe); font-size: 13px; }
+
+/* ---------- Contact ---------- */
+.contact__word { font-size: clamp(72px, min(15vw, 30vh), 260px); letter-spacing: -.035em; line-height: .84; color: var(--cream); }
+.contact__mail { font-size: clamp(18px, 2.2vw, 36px); font-weight: 500; letter-spacing: -.01em; overflow-wrap: anywhere; }
+.contact__links { display: grid; gap: 6px; justify-items: end; align-content: start; font-size: clamp(15px, 1.2vw, 18px); font-weight: 500; }
+.contact__sign p { font-size: clamp(15px, 1.2vw, 18px); line-height: 1.5; }
+.contact__sign .who { color: var(--sand); }
+
+/* =========================================================
+   Desktop: sideways panels
+   ========================================================= */
+@media (min-width: 1024px) and (min-aspect-ratio: 5/4) {
+  .hs__sticky { position: sticky; top: 0; height: 100vh; overflow: hidden; }
+  .hs__track { display: flex; height: 100%; padding-left: var(--rail); will-change: transform; }
+  .panel { flex: none; height: 100%; padding: clamp(28px, 6vh, 64px) var(--pad); }
+
+  .p-hero { width: calc(100vw - var(--rail)); grid-template-columns: 1fr auto; column-gap: 40px; }
+  .hero__name { grid-column: 1; grid-row: 1; align-self: start; }
+  .hero__lede { grid-column: 2; grid-row: 1; align-self: start; padding-top: 1vh; }
+  .hero__meta { grid-column: 1 / -1; grid-row: 2; }
+
+  .p-intro { display: grid; grid-template-columns: 12vw 33vw auto 28vw; column-gap: 4vw; }
+  .intro__col, .intro__aside { display: flex; flex-direction: column; justify-content: space-between; gap: 22px; min-height: 0; }
+  .portrait { height: 100%; aspect-ratio: 4 / 5; }
+
+  .p-wall { display: flex; align-items: center; gap: 3.2vw; padding-inline: 6vw; }
+  .t1 { height: 60vh; aspect-ratio: 4 / 5; align-self: flex-start; margin-top: 4vh; }
+  .t2 { height: 72vh; aspect-ratio: 4 / 5; align-self: flex-end; }
+  .t3 { height: 46vh; aspect-ratio: 4 / 5; align-self: flex-start; margin-top: 10vh; }
+  .t4 { height: 56vh; aspect-ratio: 4 / 5; align-self: flex-end; margin-bottom: 6vh; }
+
+  .p-work { display: grid; grid-template-columns: 12vw 46vw auto; column-gap: 4vw; }
+  .work__main { display: flex; flex-direction: column; justify-content: center; gap: clamp(18px, 3vh, 32px); min-height: 0; }
+  .preview { height: 100%; }
+
+  .p-do { display: grid; grid-template-columns: 14vw repeat(4, 23vw); grid-template-rows: 1fr auto; }
+  .p-do .chapter { grid-column: 1; grid-row: 1; padding-right: 2vw; }
+  .do__lead { grid-column: 1; grid-row: 2; font-size: clamp(18px, 1.5vw, 24px); line-height: 1.3; padding-right: 2vw; }
+  .p-do .do__col { grid-row: 1 / 3; }
+
+  .p-exp { display: grid; grid-template-columns: 12vw auto 50vw; column-gap: 4vw; padding-right: calc(var(--pad) + 3vw); }
+  .exp__photo { height: 100%; aspect-ratio: 4 / 5; }
+  .exp__main { display: flex; flex-direction: column; justify-content: center; gap: 22px; min-height: 0; }
+
+  .p-tools { display: grid; grid-template-columns: 12vw repeat(3, 22vw); column-gap: 4vw; }
+  .tool { align-self: start; margin-top: 14vh; }
+
+  .p-contact { width: calc(100vw - var(--rail)); display: grid; grid-template-columns: 1fr auto; grid-template-rows: 1fr auto; column-gap: 40px; }
+  .contact__word { grid-column: 1; grid-row: 1; align-self: start; }
+  .contact__links { grid-column: 2; grid-row: 1; }
+  .contact__reach { grid-column: 1; grid-row: 2; align-self: end; }
+  .contact__sign { grid-column: 2; grid-row: 2; align-self: end; text-align: right; }
+}
+
+/* =========================================================
+   Phones & portrait tablets: vertical chapters
+   ========================================================= */
+@media not all and (min-width: 1024px) and (min-aspect-ratio: 5/4) {
+  :root { --rail: 0px; }
+  .rail { right: 0; bottom: auto; width: auto; height: 56px; flex-direction: row; padding: 0 18px 0 0; border-right: 0; border-bottom: 1px solid var(--line); }
+  .rail[data-tone="dark"] { border-color: var(--line-dark); }
+  .rail__menu { width: 56px; height: 56px; border-bottom: 0; border-right: 1px solid; border-color: inherit; }
+  .rail__txt { writing-mode: horizontal-tb; transform: none; }
+  .rail__txt:first-of-type { display: none; }
+  .menu { padding: 84px 20px 28px; grid-template-columns: 1fr; grid-template-rows: 1fr auto; }
+  .menu__close { width: 56px; height: 56px; }
+  .menu__list a { font-size: clamp(40px, 12vw, 64px); }
+  .menu__side { justify-items: start; margin-top: 30px; }
+
+  .panel { padding: 64px 20px; }
+  .p-hero { min-height: 100vh; min-height: 100svh; padding-top: 104px; gap: 36px; }
+  .hero__meta { grid-template-columns: 1fr 1fr; row-gap: 18px; }
+  .hero__meta .scroll { display: none; }
+
+  .p-intro { display: grid; gap: 28px; }
+  .intro__col, .intro__aside { display: grid; gap: 26px; }
+  .portrait { aspect-ratio: 4 / 5; width: 100%; max-width: 520px; }
+
+  .p-wall { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; padding-block: 56px; }
+  .wall__word { grid-column: 1 / -1; font-size: clamp(72px, 24vw, 160px); }
+  .wall__word:last-child { text-align: right; }
+  .tile { aspect-ratio: 4 / 5; width: 100%; }
+
+  .p-work { display: grid; gap: 28px; }
+  .work__main { display: grid; gap: 22px; }
+  .preview, .work__detail-wrap { display: none; }
+  .work__img { display: block; aspect-ratio: 4 / 5; max-width: 100%; overflow: hidden; margin: 4px 0 14px; background: var(--stone); }
+  .work__img img { width: 100%; height: 100%; object-fit: cover; }
+  .work__more { display: block; padding: 0 0 22px; font-size: 15px; line-height: 1.55; }
+  .work__btn { grid-template-columns: 32px 1fr; }
+  .work__cat { grid-column: 2; }
+  .works:hover .work__btn:not(:hover) { opacity: 1; }
+
+  .p-do { display: grid; }
+  .do__lead { margin: 18px 0 26px; font-size: 20px; line-height: 1.35; }
+  .do__col { border-left: 0; border-top: 1px solid var(--line-dark); padding: 24px 0; grid-template-rows: auto; gap: 10px; }
+  .do__col:hover { background: none; }
+  .do__title { align-self: start; }
+
+  .p-exp { display: grid; gap: 28px; }
+  .exp__photo { aspect-ratio: 4 / 3; }
+  .exp__btn { grid-template-columns: 1fr 20px; row-gap: 6px; }
+  .exp__when { grid-column: 1 / -1; }
+  .exp__plus { grid-row: 2; grid-column: 2; }
+  .exp__body ul { margin-left: 0; }
+
+  .p-tools { display: grid; gap: 36px; }
+
+  .p-contact { display: grid; gap: 44px; padding-bottom: 40px; }
+  .contact__links { justify-items: start; }
+}
+@media (min-width: 700px) and (max-width: 1023px) {
+  .p-wall { grid-template-columns: repeat(4, 1fr); }
+  .p-tools { grid-template-columns: 1fr 1fr; }
+  .p-tools .chapter { grid-column: 1 / -1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}
+</style>
 </head>
-
 <body>
-  <div class="progress" aria-hidden="true"></div>
-  <div class="cursor" aria-hidden="true"></div>
+<div class="progress" aria-hidden="true"></div>
 
-  <header class="nav" id="top">
-    <div class="wrap">
-      <a href="#top" class="nav__mark" aria-label="Back to top">TANIA<span>.</span></a>
-      <nav class="nav__links" aria-label="Sections">
-        <a href="#lens">About</a>
-        <a href="#journey">Journey</a>
-        <a href="#work">Work</a>
-        <a href="#study">Skills</a>
-        <a href="#contact" class="nav__cta">Contact</a>
-      </nav>
-    </div>
-  </header>
+<aside class="rail" data-tone="dark">
+  <button class="rail__menu" type="button" aria-expanded="false" aria-controls="menu" aria-label="Open menu"><span></span><span></span></button>
+  <span class="rail__txt">Portfolio - Edition 2026</span>
+  <span class="rail__txt rail__name">Tania Medellin</span>
+  <span class="rail__txt">© 2026</span>
+</aside>
 
-  <main>
-    <section class="hero" aria-label="Introduction">
-      <div class="wrap">
-        <span class="hero__tag label">Portfolio 2026</span>
-        <h1 class="hero__name" data-split>
-          <span class="line">Tania</span>
-          <span class="line line--pink">Medellin</span>
-        </h1>
-        <p class="hero__sub">Six years valuing businesses and brands at EY. Now moving into marketing and brand strategy
-          across luxury, beauty, consumer brands and financial services.</p>
-        <div class="hero__actions">
-          <a class="btn btn--pink" href="#contact">Let's talk →</a>
-          <a class="btn btn--line" href="#journey">See my journey</a>
+<div class="menu" id="menu" role="dialog" aria-modal="true" aria-label="Menu">
+  <button class="menu__close" type="button" aria-label="Close menu">×</button>
+  <nav class="menu__list" aria-label="Chapters">
+    <a href="#home" data-go="home"><span class="menu__num">01.</span><span class="menu__lbl"><span class="s">Home</span><span class="e" aria-hidden="true">Home</span></span></a>
+    <a href="#about" data-go="about"><span class="menu__num">02.</span><span class="menu__lbl"><span class="s">About</span><span class="e" aria-hidden="true">About</span></span></a>
+    <a href="#work" data-go="work"><span class="menu__num">03.</span><span class="menu__lbl"><span class="s">Work</span><span class="e" aria-hidden="true">Work</span></span></a>
+    <a href="#experience" data-go="experience"><span class="menu__num">04.</span><span class="menu__lbl"><span class="s">Experience</span><span class="e" aria-hidden="true">Experience</span></span></a>
+    <a href="#contact" data-go="contact"><span class="menu__num">05.</span><span class="menu__lbl"><span class="s">Contact</span><span class="e" aria-hidden="true">Contact</span></span></a>
+  </nav>
+  <div class="menu__side">
+    <span class="eyebrow">Get in touch</span>
+    <a class="ulink" href="https://www.linkedin.com/in/taniamedellin" target="_blank" rel="noopener">LinkedIn ↗</a>
+    <a class="ulink" href="mailto:tania_stheffany.medellin_ortiz@edu.escp.eu">Email ↗</a>
+  </div>
+</div>
+
+<main class="hs" id="hs">
+  <div class="hs__sticky">
+    <div class="hs__track" id="track">
+
+      <section class="panel p-hero dark" id="home" aria-label="Introduction">
+        <h1 class="serif hero__name"><span class="rise"><span>Tania</span></span><span class="rise"><span>Medellin</span></span></h1>
+        <p class="hero__lede fade">Marketing with a financial edge - data-driven brand strategy, based in Paris.</p>
+        <div class="hero__meta fade">
+          <p>Paris, France<br /><span class="clock muted" id="clock">Paris time</span></p>
+          <p>Open to marketing<br />&amp; brand roles</p>
+          <p>Marketing and<br />Financial Consultant</p>
+          <a class="scroll" href="#about" data-go="about">Scroll <i aria-hidden="true">→</i></a>
         </div>
-        <a class="stack" href="#work" data-depth="-12"
-          aria-label="See selected work: Chanel, Revolut and Ferrari projects">
-          <figure class="stack__card s1"><img src="images/revolut.jpg" alt="" />
-            <figcaption>Fintech</figcaption>
-          </figure>
-          <figure class="stack__card s2"><img src="images/fragrance.jpg" alt="" style="object-position:45% 50%" />
-            <figcaption>Luxury beauty</figcaption>
-          </figure>
-          <figure class="stack__card s3"><img src="images/ferrari.jpg" alt="" style="object-position:50% 55%" />
-            <figcaption>Luxury retail</figcaption>
-          </figure>
-          <span class="stack__hint">See the work ↘</span>
-        </a>
-      </div>
-    </section>
+      </section>
 
-    <div class="marquee" aria-label="Areas of expertise">
-      <div class="marquee__track">
-        <span>Brand strategy</span><span>Brand valuation</span><span>Market
-          analysis</span><span>Go-to-market</span><span>CRM strategy</span><span>Financial
-          modelling</span><span>Competitive benchmarking</span><span>Brand research</span>
-        <span aria-hidden="true">Brand strategy</span><span aria-hidden="true">Brand valuation</span><span
-          aria-hidden="true">Market analysis</span><span aria-hidden="true">Go-to-market</span><span
-          aria-hidden="true">CRM strategy</span><span aria-hidden="true">Financial modelling</span><span
-          aria-hidden="true">Competitive benchmarking</span><span aria-hidden="true">Brand research</span>
-      </div>
-    </div>
-
-    <section class="lens" id="lens">
-      <div class="wrap lens__grid">
-        <div class="reveal">
-          <span class="label">About</span>
-          <h2>Two lenses,<br /><em>one</em> view.</h2>
-          <p class="lens__intro">I’m bilingual, with six years of experience in corporate finance at EY, specialising in
-            financial modelling and the valuation of companies and intangible assets, including brands.</p>
-          <p class="lens__intro">With a Master’s in Marketing &amp; Creativity at ESCP, I’m now moving into marketing
-            and brand-focused roles across luxury, beauty, consumer brands and financial services, bringing a valuation
-            lens to brand decisions. Switch the lens to see both sides.</p>
-        </div>
-        <div class="reveal">
-          <div class="switch" data-lens="finance" role="group" aria-label="Choose a lens">
-            <span class="switch__pill" aria-hidden="true"></span>
-            <button type="button" id="lens-finance" aria-pressed="true" data-lens="finance">Finance</button>
-            <button type="button" id="lens-marketing" aria-pressed="false" data-lens="marketing">Marketing</button>
-          </div>
-          <div class="lens__panel" data-lens="finance" aria-live="polite">
-            <div class="lens__body">
-              <h3>The analyst</h3>
-              <p>Six years in Strategy &amp; Transactions at EY, Bogotá, progressing from intern to Senior Consultant.
-              </p>
-              <ul>
-                <li>Business and brand valuation, including brand value assessment using the Relief-from-Royalty method
-                </li>
-                <li>Financial statement analysis and valuation modelling</li>
-                <li>Benchmarking, market and competitor analysis across multiple sectors</li>
-              </ul>
-            </div>
+      <section class="panel p-intro paper" id="about" aria-labelledby="ch1">
+        <div class="chapter"><span class="serif" id="ch1">Chapter I</span><span class="eyebrow">Quick intro</span></div>
+        <div class="intro__col">
+          <p class="intro__lead fade">Hi, I’m Tania - a marketer with six years of corporate finance at EY behind me. I bring market analysis, financial modelling and brand valuation to marketing decisions, so every idea comes with a clear business case.</p>
+          <div class="fade">
+            <p class="intro__body">Now completing an MSc in Marketing &amp; Creativity at ESCP Business School, I’m moving into marketing and brand roles across luxury, beauty, consumer brands and financial services. I’m bilingual, and I specialise in financial modelling and the valuation of companies and intangible assets, including brands.</p>
+            <p style="margin-top:22px"><a class="ulink" href="#experience" data-go="experience">My experience →</a></p>
           </div>
         </div>
-      </div>
-    </section>
-
-    <section class="figures" aria-label="At a glance">
-      <div class="wrap figures__grid">
-        <div class="fig reveal"><span class="fig__num" data-count="6">6</span><span class="fig__label">years at EY, from
-            intern to Senior Consultant</span></div>
-        <div class="fig reveal"><span class="fig__num" data-count="7" data-suffix="+">7+</span><span
-            class="fig__label">sectors: energy, healthcare, financial services, insurance, retail, industrial &amp;
-            engineering, and agriculture / natural resources</span></div>
-        <div class="fig reveal"><span class="fig__num" data-count="3" data-suffix="+">3+</span><span
-            class="fig__label">regions: client experience across Latin America, North America and Europe</span></div>
-      </div>
-    </section>
-
-    <section class="journey" id="journey">
-      <div class="wrap">
-        <div class="head reveal">
-          <h2>From valuing businesses in Bogotá to <span>building brands in Paris.</span></h2>
-          <p>Tap the timeline to explore the journey.</p>
-        </div>
-        <div class="track reveal" role="tablist" aria-label="Career timeline">
-          <span class="track__fill" aria-hidden="true"></span>
-          <button class="stop" role="tab" id="stop-0" aria-selected="false" data-i="0"><span
-              class="stop__dot"></span><span class="stop__year">2014</span><span class="stop__what">Finance &amp;
-              International Relations</span></button>
-          <button class="stop" role="tab" id="stop-1" aria-selected="false" data-i="1"><span
-              class="stop__dot"></span><span class="stop__year">2020</span><span class="stop__what">EY Valuation
-              Intern</span></button>
-          <button class="stop" role="tab" id="stop-2" aria-selected="true" data-i="2"><span
-              class="stop__dot"></span><span class="stop__year">2020–2025</span><span class="stop__what">EY Senior
-              Consultant</span></button>
-          <button class="stop" role="tab" id="stop-3" aria-selected="false" data-i="3"><span
-              class="stop__dot"></span><span class="stop__year">2026</span><span class="stop__what">ESCP MSc in
-              Marketing &amp; Creativity</span></button>
-          <button class="stop" role="tab" id="stop-4" aria-selected="false" data-i="4"><span
-              class="stop__dot"></span><span class="stop__year">Next</span><span class="stop__what">Building
-              brands</span></button>
-        </div>
-        <article class="detail" role="tabpanel" aria-live="polite"></article>
-      </div>
-    </section>
-
-    <section class="work" id="work">
-      <div class="wrap">
-        <div class="head reveal">
-          <h2>Selected work</h2>
-          <p>Strategy projects from the MSc Marketing &amp; Creativity at ESCP Business School.</p>
-        </div>
-        <div class="cards">
-          <article class="card reveal" data-tilt>
-            <div class="card__art"><img src="images/revolut.jpg"
-                alt="Black Revolut card resting on chunky pink knitted yarn" loading="lazy"
-                style="object-position:50% 50%" /></div>
-            <span class="label">Fintech · Positioning</span>
-            <h3>Revolut</h3>
-            <p>Competitive benchmark and positioning strategy against Monzo, N26, Starling and Wise, supporting an
-              agency's marketing strategy work.</p>
-            <ul>
-              <li>Benchmarking</li>
-              <li>Positioning</li>
+        <figure class="portrait fade">
+          <img src="images/tania-portrait.webp" alt="Black-and-white portrait of Tania Medellin smiling on a cobbled street in Lisbon" width="900" height="1125" loading="lazy" decoding="async" />
+          <figcaption>Tania Medellin</figcaption>
+        </figure>
+        <div class="intro__aside">
+          <div class="fade">
+            <p class="eyebrow muted" style="margin-bottom:12px">What I bring</p>
+            <ul class="brings">
+              <li><span>01</span>Benchmarking, market and competitor analysis across multiple sectors</li>
+              <li><span>02</span>Business and brand valuation, including brand value assessment using the Relief-from-Royalty method</li>
+              <li><span>03</span>Financial statement analysis and valuation modelling</li>
             </ul>
-            <span class="card__num" aria-hidden="true">1</span>
-          </article>
-          <article class="card reveal" data-tilt>
-            <div class="card__art"><img src="images/fragrance.jpg"
-                alt="Close-up of a Coco Mademoiselle perfume bottle by Chanel in soft rose light" loading="lazy"
-                style="object-position:45% 50%" /></div>
-            <span class="label">Luxury beauty · CRM</span>
-            <h3>Fragrance house</h3>
-            <p>Omnichannel customer journey and CRM strategy for a global luxury fragrance and beauty house, including
-              client segmentation, presented to a brand mentor.</p>
-            <ul>
-              <li>Omnichannel</li>
-              <li>Segmentation</li>
-            </ul>
-            <span class="card__num" aria-hidden="true">2</span>
-          </article>
-          <article class="card reveal" data-tilt>
-            <div class="card__art"><img src="images/ferrari.jpg"
-                alt="Backlit prancing-horse emblem on the facade of a Ferrari store at night" loading="lazy"
-                style="object-position:50% 55%" /></div>
-            <span class="label">Luxury retail · GTM</span>
-            <h3>Ferrari</h3>
-            <p>Go-to-market strategy and an experiential retail concept for a Bond Street flagship in London.</p>
-            <ul>
-              <li>Go-to-market</li>
-              <li>Retail experience</li>
-            </ul>
-            <span class="card__num" aria-hidden="true">3</span>
-          </article>
+          </div>
+          <dl class="figs fade">
+            <div><dt>6</dt><dd>Years at EY</dd></div>
+            <div><dt>7+</dt><dd>Sectors</dd></div>
+            <div><dt>3+</dt><dd>Regions</dd></div>
+          </dl>
+          <p class="intro__body muted fade">Beyond work: creative and visual design, from event invitations to creative concepts. Culturally curious, and drawn to international brand environments through travel.</p>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <section class="study" id="study">
-      <div class="wrap study__grid">
-        <div class="reveal">
-          <div class="head">
-            <h2>Study</h2>
-          </div>
-          <div class="school">
-            <span class="label">2026 – Present · London &amp; Paris</span>
-            <h3>MSc Marketing &amp; Creativity</h3>
-            <p>ESCP Business School</p>
-          </div>
-          <div class="school">
-            <span class="label">2014 – 2021 · Bogotá</span>
-            <h3>Finance &amp; International Relations</h3>
-            <p>Universidad Externado de Colombia, Corporate Finance emphasis</p>
+      <section class="panel p-wall paper" aria-label="The work">
+        <p class="serif wall__word" aria-hidden="true">The</p>
+        <figure class="tile t1"><img src="images/chanel.webp" alt="Black-and-white Chanel editorial: a model in a tweed jacket carrying an oversized Chanel shopping bag" width="736" height="899" loading="lazy" decoding="async" /></figure>
+        <figure class="tile t2"><img src="images/revolut-dark.webp" alt="A Revolut card resting on a glowing purple textured landscape" width="736" height="1308" loading="lazy" decoding="async" style="object-position:50% 72%" /></figure>
+        <figure class="tile t3"><img src="images/ferrari.webp" alt="Backlit prancing-horse emblem at the entrance of a Ferrari store" width="1000" height="1250" loading="lazy" decoding="async" /></figure>
+        <figure class="tile t4"><img src="images/polo.webp" alt="A Polo Ralph Lauren fragrance bottle held against a white polo shirt and tennis racket" width="800" height="1000" loading="lazy" decoding="async" /></figure>
+        <p class="serif wall__word" aria-hidden="true">Work</p>
+      </section>
+
+      <section class="panel p-work stone" id="work" aria-labelledby="ch2">
+        <div class="chapter"><span class="serif" id="ch2">Chapter II</span><span class="eyebrow">Selected work</span></div>
+        <div class="work__main">
+          <p class="eyebrow muted">Strategy projects · MSc Marketing &amp; Creativity, ESCP</p>
+          <ol class="works">
+            <li class="work" aria-current="true">
+              <button class="work__btn" type="button"><span class="work__idx">01</span><span class="work__name">Chanel<span class="work__arrow" aria-hidden="true">↗</span></span><span class="work__cat">Luxury beauty · CRM</span></button>
+              <figure class="work__img"><img src="images/chanel.webp" alt="Black-and-white Chanel editorial with an oversized Chanel shopping bag" loading="lazy" decoding="async" /></figure>
+              <p class="work__more">Omnichannel customer journey and CRM strategy for Chanel's fragrance and beauty business, including client segmentation, presented to a brand mentor.</p>
+            </li>
+            <li class="work" aria-current="false">
+              <button class="work__btn" type="button"><span class="work__idx">02</span><span class="work__name">Revolut<span class="work__arrow" aria-hidden="true">↗</span></span><span class="work__cat">Fintech · Positioning</span></button>
+              <figure class="work__img"><img src="images/revolut.webp" alt="A black Revolut card on pink knitted yarn" loading="lazy" decoding="async" /></figure>
+              <p class="work__more">Competitive benchmark and positioning strategy against Monzo, N26, Starling and Wise, supporting an agency's marketing strategy work.</p>
+            </li>
+            <li class="work" aria-current="false">
+              <button class="work__btn" type="button"><span class="work__idx">03</span><span class="work__name">Ferrari<span class="work__arrow" aria-hidden="true">↗</span></span><span class="work__cat">Luxury retail · GTM</span></button>
+              <figure class="work__img"><img src="images/ferrari.webp" alt="Backlit prancing-horse emblem at the entrance of a Ferrari store" loading="lazy" decoding="async" /></figure>
+              <p class="work__more">Go-to-market strategy and an experiential retail concept for a Bond Street flagship in London.</p>
+            </li>
+          </ol>
+          <div class="work__detail-wrap" aria-live="polite">
+            <p class="work__detail" id="work-detail">Omnichannel customer journey and CRM strategy for Chanel's fragrance and beauty business, including client segmentation, presented to a brand mentor.</p>
+            <div class="work__tags" id="work-tags"><span>Omnichannel</span><span>Segmentation</span><span>CRM</span></div>
           </div>
         </div>
-        <div class="skillset reveal">
-          <div class="head">
-            <h2>Skills</h2>
-          </div>
-          <h4 class="label">Expertise</h4>
-          <ul class="chips">
+        <div class="preview" aria-hidden="true">
+          <img class="on" src="images/chanel.webp" alt="" loading="lazy" decoding="async" />
+          <img src="images/revolut.webp" alt="" loading="lazy" decoding="async" />
+          <img src="images/ferrari.webp" alt="" loading="lazy" decoding="async" />
+        </div>
+      </section>
+
+      <section class="panel p-do dark" aria-labelledby="ch3">
+        <div class="chapter"><span class="serif" id="ch3">Chapter III</span><span class="eyebrow">What I do</span></div>
+        <p class="do__lead">Marketing decisions, backed by the numbers.</p>
+        <article class="do__col">
+          <span class="do__num">01</span>
+          <h3 class="serif do__title">Market &amp; competitor analysis</h3>
+          <p class="do__text">Benchmarking and market research that sharpen positioning, from neobank challengers to sector benchmark reports at EY.</p>
+        </article>
+        <article class="do__col">
+          <span class="do__num">02</span>
+          <h3 class="serif do__title">Brand valuation</h3>
+          <p class="do__text">Putting a number on brand equity with the Relief-from-Royalty method, as I did for a Colombian company at EY.</p>
+        </article>
+        <article class="do__col">
+          <span class="do__num">03</span>
+          <h3 class="serif do__title">Financial insight</h3>
+          <p class="do__text">Financial modelling and analysis turned into clear, decision-ready recommendations for internal and external stakeholders.</p>
+        </article>
+        <article class="do__col">
+          <span class="do__num">04</span>
+          <h3 class="serif do__title">Go-to-market &amp; CRM</h3>
+          <p class="do__text">Customer journeys, segmentation and launch concepts, from a Chanel CRM strategy to a Ferrari flagship concept.</p>
+        </article>
+      </section>
+
+      <section class="panel p-exp paper" id="experience" aria-labelledby="ch4">
+        <div class="chapter"><span class="serif" id="ch4">Chapter IV</span><span class="eyebrow">Selected experience</span></div>
+        <figure class="exp__photo fade"><img src="images/ey.webp" alt="The EY logo on a dark office facade at sunset, with a city skyline behind" width="753" height="941" loading="lazy" decoding="async" /></figure>
+        <div class="exp__main">
+          <p class="eyebrow muted">From valuing businesses in Bogotá to building brands in Paris</p>
+          <ul class="exp">
+            <li class="exp__item">
+              <button class="exp__btn" type="button" aria-expanded="false"><span class="exp__when">2026 - Present</span><span class="exp__role">MSc in Marketing &amp; Creativity<span class="exp__org">ESCP Business School · London &amp; Paris</span></span><span class="exp__plus" aria-hidden="true"></span></button>
+              <div class="exp__body"><div><ul>
+                <li>Chanel: omnichannel customer journey and CRM strategy, including client segmentation.</li>
+                <li>Revolut: competitive benchmark and positioning against Monzo, N26, Starling and Wise.</li>
+                <li>Ferrari: go-to-market strategy and experiential retail concept for a Bond Street flagship.</li>
+              </ul></div></div>
+            </li>
+            <li class="exp__item open">
+              <button class="exp__btn" type="button" aria-expanded="true"><span class="exp__when">Jul 2020 - Dec 2025</span><span class="exp__role">Senior Consultant<span class="exp__org">EY · Valuation &amp; Corporate Finance · Bogotá</span></span><span class="exp__plus" aria-hidden="true"></span></button>
+              <div class="exp__body"><div><ul>
+                <li>Produced macroeconomic and sector benchmark reports, combining competitive analysis and market research to support client positioning.</li>
+                <li>Valued a Colombian company's brand as an intangible asset using the Relief-from-Royalty method.</li>
+                <li>Led financial statement analysis and valuation modelling, translating complex financial data into clear, decision-ready recommendations for internal and external stakeholders.</li>
+                <li>Coordinated client proposals, managing timelines and cross-functional input across teams and seniority levels.</li>
+                <li>Supported valuation, financial analysis and strategic assessment projects across 7+ sectors and international markets.</li>
+                <li>Progressed from Intern to Senior Consultant.</li>
+              </ul></div></div>
+            </li>
+            <li class="exp__item">
+              <button class="exp__btn" type="button" aria-expanded="false"><span class="exp__when">Jan 2020 - Jun 2020</span><span class="exp__role">Valuation Intern<span class="exp__org">EY · Corporate Finance · Bogotá</span></span><span class="exp__plus" aria-hidden="true"></span></button>
+              <div class="exp__body"><div><ul>
+                <li>Prepared macroeconomic and market-specific reports for benchmark and sector analysis.</li>
+                <li>Analysed client financial statements and supported data adjustments for valuation.</li>
+              </ul></div></div>
+            </li>
+            <li class="exp__item">
+              <button class="exp__btn" type="button" aria-expanded="false"><span class="exp__when">2014 - 2021</span><span class="exp__role">Finance and International Relations<span class="exp__org">Universidad Externado de Colombia · Bogotá</span></span><span class="exp__plus" aria-hidden="true"></span></button>
+              <div class="exp__body"><div><ul>
+                <li>Professional degree with a Corporate Finance emphasis.</li>
+              </ul></div></div>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="panel p-tools stone" aria-labelledby="ch5">
+        <div class="chapter"><span class="serif" id="ch5">Chapter V</span><span class="eyebrow">Toolbox</span></div>
+        <div class="tool fade">
+          <h3>Expertise</h3>
+          <ul>
+            <li>Market &amp; competitor analysis</li>
+            <li>Market research</li>
+            <li>Data-driven insight</li>
             <li>Brand valuation</li>
             <li>Financial modelling</li>
-            <li>Market research</li>
-            <li>Competitive analysis</li>
-            <li>Data-driven insight</li>
+            <li>Go-to-market &amp; positioning</li>
+            <li>Omnichannel &amp; CRM strategy</li>
+            <li>Stakeholder communication</li>
             <li>Proposal development</li>
             <li>Cross-functional coordination</li>
           </ul>
-          <h4 class="label">Tools</h4>
-          <ul class="chips">
+        </div>
+        <div class="tool fade">
+          <h3>Tools</h3>
+          <ul>
             <li>Excel</li>
             <li>PowerPoint</li>
             <li>Word</li>
@@ -1786,248 +509,164 @@
             <li>ChatGPT</li>
             <li>Claude</li>
           </ul>
-          <h4 class="label">Languages</h4>
-          <div class="bars">
-            <div>
-              <div class="bar__top"><span>Spanish</span><span>Native · C2</span></div>
-              <div class="bar__track">
-                <div class="bar__fill" style="--w:100%"></div>
-              </div>
-            </div>
-            <div>
-              <div class="bar__top"><span>English</span><span>Fluent · C1</span></div>
-              <div class="bar__track">
-                <div class="bar__fill" style="--w:84%"></div>
-              </div>
-            </div>
-            <div>
-              <div class="bar__top"><span>French</span><span>B1 / Intermediate</span></div>
-              <div class="bar__track">
-                <div class="bar__fill" style="--w:50%"></div>
-              </div>
-            </div>
-          </div>
-          <h4 class="label">Beyond work</h4>
-          <p>Creative and visual design, from event invitations to creative concepts. Culturally curious, and drawn to
-            international brand environments through travel.</p>
         </div>
-      </div>
-    </section>
+        <div class="tool fade">
+          <h3>Languages</h3>
+          <ul>
+            <li>Spanish <span>Native · C2</span></li>
+            <li>English <span>Fluent · C1</span></li>
+            <li>French <span>B1 / Intermediate</span></li>
+          </ul>
+        </div>
+      </section>
 
-    <section class="contact" id="contact">
-      <div class="wrap contact__grid">
-        <h2 class="contact__title">Contact</h2>
-        <dl>
-          <div>
-            <dt>Email</dt>
-            <dd><a href="mailto:tania_stheffany.medellin_ortiz@edu.escp.eu"
-                id="email">tania_stheffany.medellin_ortiz@edu.escp.eu</a></dd>
-          </div>
-          <div>
-            <dt>Phone</dt>
-            <dd><a href="tel:+33783369508">+33 7 83 36 95 08</a></dd>
-          </div>
-          <div>
-            <dt>Location</dt>
-            <dd>Paris, France</dd>
-          </div>
-        </dl>
-        <div class="contact__social">
-          <span class="contact__label">Social</span>
-          <div class="contact__links">
-            <a href="https://www.linkedin.com/in/taniamedellin" target="_blank" rel="noopener">LinkedIn <span
-                aria-hidden="true">↗</span></a>
-            <a href="mailto:tania_stheffany.medellin_ortiz@edu.escp.eu">Email <span aria-hidden="true">↗</span></a>
-          </div>
+      <section class="panel p-contact darker" id="contact" aria-labelledby="ch6">
+        <h2 class="serif contact__word" id="ch6"><span class="rise"><span>Next</span></span><span class="rise"><span>Chapter</span></span></h2>
+        <nav class="contact__links" aria-label="Social">
+          <a class="ulink" href="https://www.linkedin.com/in/taniamedellin" target="_blank" rel="noopener">LinkedIn ↗</a>
+          <a class="ulink" href="mailto:tania_stheffany.medellin_ortiz@edu.escp.eu">Email ↗</a>
+        </nav>
+        <div class="contact__reach">
+          <p class="eyebrow muted" style="margin-bottom:12px">Contact to</p>
+          <a class="ulink contact__mail" href="mailto:tania_stheffany.medellin_ortiz@edu.escp.eu">tania_stheffany.medellin_ortiz@edu.escp.eu</a>
+          <p class="muted" style="margin-top:16px"><a href="tel:+33783369508">+33 7 83 36 95 08</a> · Paris, France</p>
         </div>
         <div class="contact__sign">
-          <p>Marketing &amp; Financial Consultant</p>
+          <p>Marketing and Financial Consultant</p>
           <p class="who">Tania Medellin</p>
-          <p class="year">© <span id="year">2026</span></p>
+          <p class="muted" style="margin-top:14px">© <span id="year">2026</span> · <a class="ulink" href="#home" data-go="home">Back to start ↑</a></p>
         </div>
-        <nav class="contact__rail" aria-label="Quick contact">
-          <a href="https://www.linkedin.com/in/taniamedellin" target="_blank" rel="noopener" aria-label="LinkedIn"><svg
-              viewBox="0 0 24 24" aria-hidden="true">
-              <path
-                d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9.75h4v11H3v-11zm6.5 0h3.8v1.6h.06c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.77 2.6 4.77 6v5.45h-4v-4.8c0-1.15-.02-2.62-1.6-2.62-1.6 0-1.850 1.25-1.85 2.54v4.88h-4v-11z" />
-            </svg></a>
-          <a href="mailto:tania_stheffany.medellin_ortiz@edu.escp.eu" aria-label="Email"><svg viewBox="0 0 24 24"
-              aria-hidden="true">
-              <path
-                d="M3 5h18a1 1 0 0 1 1 1v.4l-10 6.1L2 6.4V6a1 1 0 0 1 1-1zm-1 3.75 9.48 5.78a1 1 0 0 0 1.04 0L22 8.75V18a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V8.75z" />
-            </svg></a>
-          <a href="tel:+33783369508" aria-label="Phone"><svg viewBox="0 0 24 24" aria-hidden="true">
-              <path
-                d="M6.6 10.8a15.2 15.2 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.250.2 2.45.57 3.57a1 1 0 0 1-.25 1L6.6 10.8z" />
-            </svg></a>
-        </nav>
-        <a class="contact__top" href="#top">Back to top ↑</a>
-      </div>
-    </section>
-  </main>
+      </section>
 
-  <div class="toast" role="status" aria-live="polite">Email copied</div>
+    </div>
+  </div>
+</main>
 
-  <script>
-    (function () {
-      const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-      const fine = window.matchMedia("(pointer: fine)").matches;
-      document.getElementById("year").textContent = new Date().getFullYear();
+<script>
+(function () {
+  const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const wide = matchMedia("(min-width: 1024px) and (min-aspect-ratio: 5/4)");
+  const hs = document.getElementById("hs"), track = document.getElementById("track");
+  const rail = document.querySelector(".rail"), bar = document.querySelector(".progress");
+  const panels = [...track.querySelectorAll(".panel")];
+  document.getElementById("year").textContent = new Date().getFullYear();
 
-      // Split hero letters for hover play
-      document.querySelectorAll("[data-split] .line").forEach((line) => {
-        const text = line.textContent;
-        line.setAttribute("aria-label", text);
-        line.textContent = "";
-        [...text].forEach((c) => {
-          const s = document.createElement("span");
-          s.className = "ch"; s.textContent = c; s.setAttribute("aria-hidden", "true");
-          line.appendChild(s);
-        });
-      });
+  // Paris clock
+  const clock = document.getElementById("clock");
+  function tick() {
+    try {
+      const now = new Date();
+      const t = new Intl.DateTimeFormat("en-GB", { timeZone: "Europe/Paris", hour: "2-digit", minute: "2-digit" }).format(now);
+      const part = new Intl.DateTimeFormat("en-GB", { timeZone: "Europe/Paris", timeZoneName: "shortOffset" }).formatToParts(now).find((p) => p.type === "timeZoneName");
+      clock.textContent = "(" + (part ? part.value : "Paris") + ") " + t;
+    } catch (e) { clock.textContent = "Paris time"; }
+  }
+  tick(); setInterval(tick, 20000);
 
-      // Scroll progress
-      const bar = document.querySelector(".progress");
-      const onScroll = () => {
-        const h = document.documentElement.scrollHeight - innerHeight;
-        bar.style.transform = "scaleX(" + (h > 0 ? scrollY / h : 0) + ")";
-      };
-      addEventListener("scroll", onScroll, { passive: true }); onScroll();
-
-      // Custom cursor + hero parallax (desktop only)
-      if (fine && !reduce) {
-        document.documentElement.classList.add("has-cursor");
-        const cur = document.querySelector(".cursor");
-        addEventListener("mousemove", (e) => { cur.style.transform = "translate(" + e.clientX + "px," + e.clientY + "px)"; cur.classList.add("is-on"); });
-        document.querySelectorAll("a, button, .chips li, [data-tilt]").forEach((el) => {
-          el.addEventListener("mouseenter", () => cur.classList.add("is-big"));
-          el.addEventListener("mouseleave", () => cur.classList.remove("is-big"));
-        });
-        const hero = document.querySelector(".hero");
-        const tiles = hero.querySelectorAll("[data-depth]");
-        hero.addEventListener("mousemove", (e) => {
-          const r = hero.getBoundingClientRect();
-          const x = (e.clientX - r.left) / r.width - .5, y = (e.clientY - r.top) / r.height - .5;
-          tiles.forEach((t) => { const d = +t.dataset.depth; t.style.transform = "translate(" + x * d + "px," + y * d + "px) rotate(" + x * d / 8 + "deg)"; });
-        });
-        hero.addEventListener("mouseleave", () => tiles.forEach((t) => (t.style.transform = "")));
-
-        // Card tilt
-        document.querySelectorAll("[data-tilt]").forEach((card) => {
-          card.addEventListener("mousemove", (e) => {
-            const r = card.getBoundingClientRect();
-            const x = (e.clientX - r.left) / r.width - .5, y = (e.clientY - r.top) / r.height - .5;
-            card.style.transform = "rotateY(" + x * 10 + "deg) rotateX(" + -y * 10 + "deg) translateY(-6px)";
-          });
-          card.addEventListener("mouseleave", () => (card.style.transform = ""));
-        });
+  // Sideways panels on desktop: vertical scroll drives a horizontal track
+  let maxX = 0;
+  function layout() {
+    if (wide.matches) {
+      maxX = Math.max(0, track.scrollWidth - innerWidth);
+      hs.style.height = (maxX + innerHeight) + "px";
+    } else {
+      hs.style.height = ""; track.style.transform = ""; maxX = 0;
+    }
+    onScroll();
+  }
+  function onScroll() {
+    let p;
+    if (wide.matches) {
+      const x = Math.min(maxX, Math.max(0, scrollY - hs.offsetTop));
+      track.style.transform = "translate3d(" + (-x) + "px,0,0)";
+      p = maxX ? x / maxX : 0;
+    } else {
+      const h = document.documentElement.scrollHeight - innerHeight;
+      p = h > 0 ? scrollY / h : 0;
+    }
+    bar.style.transform = "scaleX(" + p + ")";
+    const probe = wide.matches ? { x: 80, y: innerHeight / 2 } : { x: innerWidth / 2, y: 28 };
+    for (const pnl of panels) {
+      const r = pnl.getBoundingClientRect();
+      if (r.left <= probe.x && r.right > probe.x && r.top <= probe.y && r.bottom > probe.y) {
+        rail.dataset.tone = (pnl.classList.contains("dark") || pnl.classList.contains("darker")) ? "dark" : "light";
+        break;
       }
+    }
+  }
+  addEventListener("scroll", onScroll, { passive: true });
+  addEventListener("resize", layout);
+  if (wide.addEventListener) wide.addEventListener("change", layout); else wide.addListener(layout);
+  addEventListener("load", layout);
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(layout);
+  layout();
 
-      // Lens switch
-      const lenses = {
-        finance: {
-          title: "The analyst", text: "Six years in Strategy & Transactions at EY, Bogotá, progressing from intern to Senior Consultant.",
-          items: ["Business and brand valuation, including brand value assessment using the Relief-from-Royalty method", "Financial statement analysis and valuation modelling", "Benchmarking, market and competitor analysis across multiple sectors"]
-        },
-        marketing: {
-          title: "The strategist", text: "A Master's in Marketing & Creativity at ESCP, applied to fintech, luxury beauty and luxury retail briefs.",
-          items: ["Competitive positioning for a neobank against four challengers", "Omnichannel customer journeys and CRM segmentation", "Go-to-market and experiential retail concepts"]
-        }
-      };
-      const sw = document.querySelector(".switch"), panel = document.querySelector(".lens__panel");
-      sw.querySelectorAll("button").forEach((b) => b.addEventListener("click", () => {
-        const k = b.dataset.lens; if (sw.dataset.lens === k) return;
-        sw.dataset.lens = k; panel.dataset.lens = k;
-        sw.querySelectorAll("button").forEach((x) => x.setAttribute("aria-pressed", String(x === b)));
-        const L = lenses[k];
-        const body = document.createElement("div"); body.className = "lens__body swap";
-        const h = document.createElement("h3"); h.textContent = L.title;
-        const p = document.createElement("p"); p.textContent = L.text;
-        const ul = document.createElement("ul"); L.items.forEach((t) => { const li = document.createElement("li"); li.textContent = t; ul.appendChild(li); });
-        body.append(h, p, ul); panel.replaceChildren(body);
-      }));
+  function go(id) {
+    const el = document.getElementById(id); if (!el) return;
+    const behavior = reduce ? "auto" : "smooth";
+    if (wide.matches) {
+      const x = el.offsetLeft - parseFloat(getComputedStyle(track).paddingLeft);
+      scrollTo({ top: hs.offsetTop + Math.min(maxX, Math.max(0, x)), behavior });
+    } else {
+      scrollTo({ top: el.getBoundingClientRect().top + scrollY - 56, behavior });
+    }
+  }
 
-      // Journey
-      const stops = [
-        {
-          tag: "2014 – 2021 · Bogotá", title: "Finance and International Relations", org: "Universidad Externado de Colombia",
-          items: ["Professional degree in Finance and International Relations, with a Corporate Finance emphasis.", "The foundation for a career in valuation and financial modelling."]
-        },
-        {
-          tag: "Jan – Jun 2020 · Bogotá", title: "EY Valuation Intern", org: "EY · Corporate Finance",
-          items: ["Analysed client financial statements and supported data adjustments for valuation.", "Prepared macroeconomic and market-specific reports for benchmark and sector analysis."]
-        },
-        {
-          tag: "Jul 2020 – Dec 2025 · Bogotá", title: "EY Senior Consultant", org: "EY · Valuation & Corporate Finance",
-          items: ["Valued a Colombian company's brand as an intangible asset using the Relief-from-Royalty method.", "Led financial statement analysis and valuation modelling for retail, construction and other clients.", "Produced macroeconomic and sector benchmark reports to support client positioning.", "Supported valuation, financial analysis and strategic assessment projects across 7+ sectors and international markets.", "Coordinated client proposals across teams and seniority levels."]
-        },
-        {
-          tag: "2026 – Present · London & Paris", title: "ESCP MSc in Marketing & Creativity", org: "ESCP Business School",
-          items: ["Revolut: competitive benchmark and positioning against Monzo, N26, Starling and Wise.", "Luxury fragrance & beauty house: omnichannel journey and CRM segmentation.", "Ferrari: Bond Street flagship go-to-market and experiential retail."]
-        },
-        {
-          tag: "Next", title: "Building brands", org: "Across luxury, beauty, consumer and financial services",
-          items: ["Marketing and brand strategy roles across industries.", "Brand building, consumer and market research, go-to-market strategy.", "A valuation lens that turns brand ideas into a clear business case."]
-        }
-      ];
-      const detail = document.querySelector(".detail"), fill = document.querySelector(".track__fill");
-      const stopBtns = document.querySelectorAll(".stop");
-      function show(i, animate) {
-        const s = stops[i];
-        stopBtns.forEach((b, j) => { b.setAttribute("aria-selected", String(j === i)); b.tabIndex = j === i ? 0 : -1; });
-        detail.setAttribute("aria-labelledby", "stop-" + i);
-        const meta = document.createElement("div"); meta.className = "detail__meta";
-        const tag = document.createElement("span"); tag.className = "label"; tag.textContent = s.tag;
-        const h = document.createElement("h3"); h.textContent = s.title;
-        const p = document.createElement("p"); p.textContent = s.org;
-        meta.append(tag, h, p);
-        const ul = document.createElement("ul"); s.items.forEach((t) => { const li = document.createElement("li"); li.textContent = t; ul.appendChild(li); });
-        detail.replaceChildren(meta, ul);
-        const b = stopBtns[i]; fill.style.width = (b.offsetLeft + 9) + "px";
-        if (animate) { detail.classList.remove("swap"); void detail.offsetWidth; detail.classList.add("swap"); }
-      }
-      stopBtns.forEach((b, i) => {
-        b.addEventListener("click", () => show(i, true));
-        b.addEventListener("keydown", (e) => {
-          const d = e.key === "ArrowRight" ? 1 : e.key === "ArrowLeft" ? -1 : 0;
-          if (d) { const n = (i + d + stops.length) % stops.length; show(n, true); stopBtns[n].focus(); }
-        });
-      });
-      show(2, false);
-      addEventListener("resize", () => { const sel = [...stopBtns].findIndex((b) => b.getAttribute("aria-selected") === "true"); fill.style.width = (stopBtns[sel].offsetLeft + 9) + "px"; });
+  // Menu
+  const menu = document.getElementById("menu"), openBtn = rail.querySelector(".rail__menu"), closeBtn = menu.querySelector(".menu__close");
+  function setMenu(open, refocus) {
+    menu.classList.toggle("open", open);
+    openBtn.setAttribute("aria-expanded", String(open));
+    document.body.style.overflow = open ? "hidden" : "";
+    if (open) menu.querySelector(".menu__list a").focus(); else if (refocus) openBtn.focus();
+  }
+  openBtn.addEventListener("click", () => setMenu(true));
+  closeBtn.addEventListener("click", () => setMenu(false, true));
+  addEventListener("keydown", (e) => { if (e.key === "Escape" && menu.classList.contains("open")) setMenu(false, true); });
+  document.querySelectorAll("[data-go]").forEach((a) => a.addEventListener("click", (e) => {
+    e.preventDefault();
+    if (menu.contains(a)) setMenu(false, false);
+    go(a.dataset.go);
+  }));
 
-      // Reveal, counters and bars
-      function count(el) {
-        const end = +el.dataset.count, suf = el.dataset.suffix || "", t0 = performance.now(), dur = 1300;
-        (function tick(t) {
-          const k = Math.min(1, (t - t0) / dur), e = 1 - Math.pow(1 - k, 3);
-          el.textContent = Math.round(end * e) + suf; if (k < 1) requestAnimationFrame(tick);
-        })(t0);
-      }
-      if ("IntersectionObserver" in window && !reduce) {
-        const io = new IntersectionObserver((entries) => entries.forEach((en) => {
-          if (!en.isIntersecting) return;
-          const el = en.target; el.classList.add("in");
-          el.querySelectorAll("[data-count]").forEach(count);
-          el.querySelectorAll(".bars").forEach((b) => b.classList.add("in"));
-          io.unobserve(el);
-        }), { threshold: .15 });
-        document.querySelectorAll(".reveal").forEach((el) => io.observe(el));
-      }
+  // Work list: hover or tap a name to swap the preview
+  const works = [...document.querySelectorAll(".work")];
+  const previews = [...document.querySelectorAll(".preview img")];
+  const tags = [["Omnichannel", "Segmentation", "CRM"], ["Benchmarking", "Positioning"], ["Go-to-market", "Retail experience"]];
+  const detail = document.getElementById("work-detail"), tagBox = document.getElementById("work-tags");
+  function setWork(i) {
+    works.forEach((w, j) => w.setAttribute("aria-current", String(j === i)));
+    previews.forEach((im, j) => im.classList.toggle("on", j === i));
+    detail.textContent = works[i].querySelector(".work__more").textContent;
+    tagBox.replaceChildren(...tags[i].map((t) => { const s = document.createElement("span"); s.textContent = t; return s; }));
+  }
+  works.forEach((w, i) => {
+    const b = w.querySelector(".work__btn");
+    ["mouseenter", "focus", "click"].forEach((ev) => b.addEventListener(ev, () => setWork(i)));
+  });
 
-      // Copy email
-      const toast = document.querySelector(".toast");
-      const copyBtn = document.getElementById("copy-email");
-      if (copyBtn) copyBtn.addEventListener("click", () => {
-        const email = document.getElementById("email").textContent;
-        const done = (msg) => { toast.textContent = msg; toast.classList.add("show"); setTimeout(() => toast.classList.remove("show"), 2000); };
-        const select = () => { const r = document.createRange(); r.selectNodeContents(document.getElementById("email")); const s = getSelection(); s.removeAllRanges(); s.addRange(r); done("Email selected, press copy"); };
-        if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(email).then(() => done("Email copied"), select);
-        else select();
-      });
-    })();
-  </script>
+  // Experience accordion
+  const items = [...document.querySelectorAll(".exp__item")];
+  items.forEach((it) => {
+    const b = it.querySelector(".exp__btn");
+    b.addEventListener("click", () => {
+      const open = !it.classList.contains("open");
+      items.forEach((o) => { o.classList.remove("open"); o.querySelector(".exp__btn").setAttribute("aria-expanded", "false"); });
+      if (open) { it.classList.add("open"); b.setAttribute("aria-expanded", "true"); }
+    });
+  });
+
+  // Reveal once per panel (content stays visible if this never runs)
+  if (!reduce && "IntersectionObserver" in window) {
+    panels.forEach((p, i) => { if (i > 0) p.classList.add("pre"); });
+    const io = new IntersectionObserver((ents) => ents.forEach((en) => {
+      if (en.isIntersecting) { en.target.classList.remove("pre"); en.target.classList.add("in"); io.unobserve(en.target); }
+    }), { threshold: 0.08 });
+    panels.forEach((p) => io.observe(p));
+    panels[0].classList.add("in");
+  }
+})();
+</script>
 
 </body>
-
 </html>

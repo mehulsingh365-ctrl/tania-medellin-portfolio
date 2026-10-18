@@ -1,6 +1,6 @@
-# Tania Medellín Ortiz — Portfolio
+# Tania Medellin — Portfolio
 
-A single-page portfolio in berry, pink and chalk. Plain HTML, CSS and JS in one file: no build step, no dependencies.
+A single-page editorial portfolio in brown and cream, with sideways chapter panels on desktop. Plain HTML, CSS and JS in one file: no build step, no dependencies.
 
 ## Files
 - `index.html` — the whole site (colours live in `:root` at the top of the `<style>` block)
